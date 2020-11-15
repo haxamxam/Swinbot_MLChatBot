@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script&family=Piazzolla:wght@100&display=swap" rel="stylesheet">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Swinburne University of Technology Chatbot</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+html,
+   *{
+              margin: 0;
+              padding: 0;
+              font-family: 'Abel', sans-serif;
+        }
+
+ #head{
+
+              height: 100vh;
+              background-image: url(../static/images/background.png);
+              background-position: center;
+              background-size :cover;
+        }
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #4c4c6a;
+	border-radius: 2px;
+}
+.chatbox {
+    width: 380px;
+    height: 550px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    margin-top: 50px;
+    margin-right: 1000px
+}
+
+.chat-window {
+    flex: auto;
+    max-height: calc(100% - 40px);
+    max-width:  500px;
+    height: 200px;
+    background: #434242;
+    overflow: auto;
+
+}
+
+.chat-input {
+    flex: 0 0 auto;
+    height: 60px;
+    background: #ffff;
+    border-top: 1px solid #2671ff;
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+}
+.chat-input input {
+    height: 59px;
+    line-height: 60px;
+    outline: 0 none;
+    border: none;
+    width: calc(100% - 60px);
+    color: black;
+    text-indent: 10px;
+    font-size: 11pt;
+    padding: 0;
+    background: #ddd;
+}
+.chat-input button {
+    float: right;
+    outline: 0 none;
+    border: none;
+    background: rgba(255,255,255,.25);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 2px 0 0 0;
+    margin: 10px;
+    transition: all 0.15s ease-in-out;
+}
+.chat-input input[good] + button {
+    box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+    background: #2671ff;
+}
+.chat-input input[good] + button:hover {
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.chat-input input[good] + button path {
+    fill: white;
+}
+.msg-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+.msg-box {
+    margin-left: 10px;
+    background: #fff;
+    font-color: black;
+    padding: 10px 10px 0 10px;
+    border-radius: 15px 15px 15px 15px;
+    border-top-left-radius: 0;
+    max-width: 80%;
+    width: auto;
+    float: left;
+    box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
+}
+.msg-box:first-of-type {
+ margin-top: 10px;
+}
+.user-img {
+    float: left;
+    display: inline-block;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background: #2671ff;
+    margin: 10px 0 0 10px;
+}
+.flr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.messages {
+    flex: 1 0 auto;
+    word-wrap: break-word;
+}
+.msg {
+    font-size: 11pt;
+    line-height: 13pt;
+}
+.msg-remote .msg {
+    color: black;
+    font-size: 11pt;
+    line-height: 13pt;
+}
+.msg:first-of-type {
+    margin-top: 10px;
+}
+.timestamp {
+    color: rgba(0,0,0,.38);
+    font-size: 8pt;
+    margin-bottom: 10px;
+}
+.username {
+    margin-right: 10px;
+    font-weight: bold;
+    color:black;
+}
+.posttime {
+    font-size: 0.85em;
+}
+.msg-self .msg-box {
+    margin-right: 10px;
+    border-radius: 15px 15px 15px 15px;
+    border-top-right-radius: 0;
+    background-color: #80aaff;
+	color: #fff;
+    float: right;
+}
+.msg-self .user-img {
+    float: right;
+    margin: 10px 10px 0px 0px;
+}
+.msg-self .msg {
+    text-align: left;
+}
+.msg-self .timestamp {
+    text-align: right;
+}
+.menu {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+
+}
+.header-img {
+    float: left;
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    object-fit: cover;
+    background: black;
+    margin-right: 15px;
+
+
+}
+.header-text {
+  color: #ffff;
+  font-size: 14pt;
+  text-align: left;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: black;
+
+
+}
+
+
+.logo-section{
+            margin-top: 1px;
+            width: 200px;
+            margin-right:1200px;
+            }
+ #sideNav{
+                width: 250px;
+                height: 100vh;
+                position: fixed;
+                right: -250px;
+                top: 0;
+                background: #80aaff;
+                z-index: 2;
+                transition: .5s;
+            }
+            nav ul li{
+                list-style: none;
+                margin: 50px 20px;
+            }
+            nav ul li a{
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+            }
+            #menuBtn{
+                width: 50px;
+                position: fixed;
+                right: 65px;
+                top: 35px;
+                z-index: 2;
+                cursor: pointer;
+            }
+
+
+
+
+            #footer{
+                padding: 50px 0 30px;
+            }
+            hr{
+                width: 100%;
+                border: 0;
+                border-top: 1px solid #f67c92;
+             }
+             .footer-row{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+              }
+              .footer-left-col{
+                  flex-basis: 50%;
+                  margin-top: 60px;
+
+              }
+              .footer-right-col{
+                  flex-basis: 35%;
+              }
+              .footer-links{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+               }
+               .link-title h4{
+                    color: #fab3c4;
+                    margin-bottom: 20px;
+                }
+                .link-title small{
+                        font-size: 13px;
+                        color: #777;
+                 }
+                 .footer-info{
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                 }
+                 .footer-logo img{
+                        width: 150px;
+                 }
+                 .copyright-text, .footer-logo{
+                        flex-basis: 40%;
+                 }
+
+                 @keyframes popout {
+                              from{transform:scale(0)}
+                              80%{transform:scale(1.2)}
+                              to{transform:scale(1)}
+                                 }
+                 @-webkit-keyframes popout {
+                              from{-webkit-transform:scale(0)}
+                              80%{-webkit-transform:scale(1.2)}
+                              to{-webkit-transform:scale(1)}
+                             }
+                 .msg-container.msg-remote {
+                                animation: popout 2s ease;
+                                -webkit-animation: popout 2s ease;
+                        }
+
+              @media only screen and (max-width: 770px){
+              .logo{
+                       margin-top:1px;
+                       flex-basis: 100%;
+                    }
+               #menuBtn{
+                         width: 30px;
+                         right: 15px;
+
+
+                       }
+               .chatbox{
+                            flex-basis: 100px;
+                            }
+                .footer-left-col{
+                                      flex-basis:100%;
+                                      }
+                .footer-right-col{
+                                  flex-basis: 100%;
+                                  }
+                #sideNav{
+                 width: 100px;
+                height: 100vh;
+                position: fixed;
+                right: -250px;
+                top: 0;
+                background: #80aaff;
+                z-index: 2;
+                transition: .5s;
+            }
+            nav ul li{
+                                    list-style: none;
+                                    margin: 20px 10px;
+                                    height: 70px;
+                                    }
+                         nav ul li a{
+                                      text-decoration: none;
+                                      color: #fff;
+                                       font-weight: bold;
+                                    }
+
+            }
+
+
+ </style>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script>
+ $('.chat-input input').keyup(function(e) {
+	if ($(this).val() == '')
+		$(this).removeAttr('good');
+	else
+		$(this).attr('good', '');
+});
+ 
+ </script>
+
+
+  </head>
+
+
+
+<body>
+<section id="head">
+    
+<!-- Chat window -->
+<div class="container">
+    <div class="chatbox">
+        <div class="menu">
+            <img class="header-img" src="https://www.swinburne.edu.au/content/dam/media/brand/logo-long-full.svg" />
+           <p class="header-text">SwinBot</p>
+       </div>
+        <div class="chat-window">
+    
+            <article class="msg-container msg-remote"><img class="user-img" id="user-0" src="../static/images/chatimage.png" /><div class="msg-box"><div class="flr"><div class="username">Bot</div></div><div class="messages"><p class="msg" id="msg_1">Hi my name is Swinbot. Let me know if you need my help</p></div></div></article>'
+		</div>
+
+        <!-- input message area -->
+		<form class="chat-input" action="" method="POST">
+			<input type="text" class="message" autocomplete="on" placeholder="Type a message" />
+			<button type="submit">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                    <path fill="rgba(0,0,0,.38)" d="M17,12L12,17V14H8V10H12V7L17,12M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z" />
+                    </svg>
+            </button>
+		</form>
+    </div>
+
+    <!-- Side menu bar -->
+     <nav id="sideNav">
+
+        <ul>
+            <li><a href="swinbot">Home </a></li>
+            <li><a href="swinbot">Get Started </a></li>
+            <li><a href="swinbot">Manage Your Course</a></li>
+            <li><a href="swinbot">Study Support and Resources</a></li>
+            <li><a href="swinbot">Campus Life</a></li>
+            <li><a href="swinbot">Contact</a></li>
+
+        </ul>
+    </nav>
+    <img src="../static/images/menu.png" id="menuBtn"> <!--image for menu button -->
+    </div>
+    </section>
+
+    <!--footer -->
+
+   <section id="footer">
+       <div class="container">
+        <div class="footer-row">
+            <hr>
+                <div class="footer-left-col">
+                    <div class="footer-links">
+                        <div class="link-title">
+                            <h4> About </h4>
+                            <small> Our University </small><br/>
+                             <small> Our Structure </small><br/>
+                             <small> Leadership and governance </small><br/>
+                            <small> Swinburne Online </small>
+
+                        </div>
+                        <div class="link-title">
+                            <h4> Library </h4>
+                            <small> Search </small><br/>
+                             <small> Referencing </small><br/>
+                             <small> Study spaces and computers </small><br/>
+                            <small> Services for teachers </small>
+
+                        </div>
+                        <div class="link-title">
+                            <h4> Current Students </h4>
+                            <small> Sign In </small><br/>
+                             <small> Getting started at Swinburne </small><br/>
+                             <small> Manage your course </small>
+
+                        </div>
+
+                    </div>
+            </div>
+            <div class="footer-right-col">
+                  <div class="footer-info">
+                      <div class="copyright-text">
+                          <small>askgeorge@swin.edu.au</small><br/>
+                          <small>copyright 2020 Team18</small>
+
+                      </div>
+                      <div class="footer-logo">
+                          <img src="../static/images/logo.png">
+                      </div>
+                  </div>
+            </div>
+        </div>
+       </div>
+    </section>
+
+
+<!-- Links to load jquery and Socket IO JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    <script>
+
+    //connection to the socket IO server
+      var socket = io.connect( 'http://' + document.domain + ':' + location.port )
+
+          // broadcast a message when user is connected
+      socket.on( 'connect', function() {
+        socket.emit( 'my event', {
+          data: 'User Connected'
+        } )
+        var form = $( 'form' ).on( 'submit', function( e ) {
+          e.preventDefault()
+          let user_name = "User"
+          let user_input = $( 'input.message' ).val()
+
+          socket.emit( 'my eventes', {
+            user_name : user_name,
+            message : user_input
+          } )
+
+          // empty the input field
+          $( 'input.message' ).val( '' ).focus()
+        } )
+      } )
+
+      // capture message
+      socket.on( 'my response', function( msg ) {
+        console.log( msg )
+        var dt = new Date();
+        var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
+        if( typeof msg.user_name !== 'undefined' ) {
+            $( '.chat-window' ).append('<article class="msg-container msg-self"><img class="user-img" id="user-0" src="../static/images/chatuser3.jpeg" /><div class="msg-box"><div class="flr"><div class="username">User</div><div class="posttime">'+time+'</div></div><div class="messages"><p class="msg" id="msg_0">'+msg.message+'</p></div></div></article>')
+          $( '.chat-window' ).append('<article class="msg-container msg-remote"><img class="user-img" id="user-0" src="../static/images/chatimage.png" /><div class="msg-box"><div class="flr"><div class="username">Bot</div><div class="posttime">'+time+'</div></div><div class="messages"><p class="msg" id="msg_1">'+msg.answer+'</p></div></div></article>')
+          $('.chat-window').stop ().animate ({
+  scrollTop: $('.chat-window')[0].scrollHeight
+});
+        }
+      }
+
+      )
+// menu linking different sections of the swinbot  page
+
+       var menuBtn = document.getElementById("menuBtn");
+        var sideNav = document.getElementById("sideNav");
+
+        sideNav.style.right = "-250px";
+        menuBtn.onclick = function(){
+        if(sideNav.style.right == "-250px"){
+            sideNav.style.right = "0px";
+           }
+           else{
+                sideNav.style.right = "-250px";
+               }
+           }
+
+
+    </script>
+
+
+
+</body>
+</html>

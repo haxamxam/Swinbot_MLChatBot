@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script&family=Piazzolla:wght@100&display=swap" rel="stylesheet">
+    <title>Swinbot</title>
+
+
+    <style>
+
+        *{
+              margin: 0;
+              padding: 0;
+             font-family: 'Abel', sans-serif;
+        }
+        #header{
+
+              height: 100vh;
+              background-image: url(../static/images/background.png);
+              background-position: center;
+              background-size :cover;
+        }
+        .container{
+
+            margin-right: 100px;
+            margin-left: 100px;
+            }
+        .logo{
+            margin-top: 30px;
+            width: 200px;
+            }
+        .header-text{
+            max-width: 350px;
+            margin-top:140px;
+            font-weight: bold;
+
+          }
+         h1{
+            font-size:34px;
+            }
+          .square{
+            height:12px;
+            width:12px;
+            display: inline-block;
+            background: #f67c92;
+            margin: 15px 0;
+
+            }
+           .common-btn{
+                padding: 12px 20px;
+                background: transparent;
+                outline: none;
+                border: 2px solid #f67c92;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius:60px;
+                }
+            .common-btn:hover{
+            background-color: #80aaff;
+            color: white;
+           }
+           .common-btn a{
+           text-decoration:none;
+           color:black;
+           }
+
+           p{
+            font-size: 15px;
+            line-height: 18px;
+            color: #777;
+           }
+           .header-text button{
+                margin-top:20px;
+                margin-bottom:60px;
+           }
+           .line-1{
+                width: 15px;
+                height: 15px;
+                background: #f67c92;
+                display : inline-block;
+           }
+           .line-2{
+                width: 80px;
+                height: 1px;
+                background: #f67c92;
+                display : inline-block;
+            }
+            .line-3{
+                width: 60px;
+                height: 1px;
+                background: #f67c92;
+                display : inline-block;
+            }
+            .line{
+                line-height: 8px;
+            }
+            #sideNav{
+                width: 250px;
+                height: 100vh;
+                position: fixed;
+                right: -250px;
+                top: 0;
+                background: #80aaff;
+                z-index: 2;
+                transition: .5s;
+            }
+            nav ul li{
+                list-style: none;
+                margin: 50px 20px;
+            }
+            nav ul li a{
+                text-decoration: none;
+                color: #fff;
+                font-weight: bold;
+            }
+            #menuBtn{
+                width: 50px;
+                position: fixed;
+                right: 65px;
+                top: 35px;
+                z-index: 2;
+                cursor: pointer;
+            }
+
+
+
+
+             #Get-started{
+                padding:100px 0;
+                display: flex;
+                align-items: center;
+                flex- wrap;
+            }
+            .Get-left-col{
+                flex-basis: 50%;
+            }
+            .Get-left-col img{
+                width: 100%;
+                 height: auto;
+            }
+            .Get-right-col{
+                flex-basis: 50%;
+                text-align: right;
+            }
+            .Get-Text{
+                max-width:500px;
+                margin-left: 100px;
+                display: inline-block;
+                font-weight: bold;
+
+            }
+            .Get-Text h3{
+                margin: 20px 0 10px;
+                font-size: 25px;
+                font-family: 'Dancing Script', cursive;
+            }
+            .Get-Text h4{
+                font-size: 15px;
+                font-style: italic;
+                color: #797979;
+
+            }
+
+           .Get-row{
+                        display: flex;
+                        align-item: center;
+                        flex-wrap: wrap;
+                        margin-top: 150px;
+                       }
+
+            .Get-btn1{
+                padding: 12px 20px;
+                background: transparent;
+                outline: none;
+                border: 2px solid #f67c92;
+                font-weight: bold;
+                cursor: pointer;
+                border-radius:60px;
+            }
+
+           .Get-btn1:hover {
+            background-color: #80aaff;
+            color: white;
+           }
+           .Get-btn1 a{
+           text-decoration:none;
+           color:black;
+           }
+
+
+
+            #manage{
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            .manage-h1{
+                     margin-bottom: 90px;
+
+            }
+
+            .manage-row{
+                width:80%;
+                margin: auto;
+                display: flex;
+                align-item: center;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            .manage-col{
+                flex-basis: 25%;
+                text-align: center;
+                 font-weight: bold;
+             }
+             .manage-col img{
+                width: 100px;
+             }
+             .manage-col h4{
+                margin-bottom: 15px;
+                font-size: 20px;
+                font-weight: 400;
+                 font-weight: bold;
+
+
+             }
+
+             #manage h1{
+             font-size:34px;
+             text-align: center;
+
+
+             }
+
+
+             .common-btn{
+                padding: 12px 20px;
+                background: transparent;
+                outline: none;
+                border: 2px solid #f67c92;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .manage-btn{
+                margin: 80px auto 0;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+            }
+            .manage-btn .line{
+                text-align: right;
+                display: inline-block;
+                margin-right: 25px;
+
+            }
+
+
+
+            #study{
+                padding: 100px 0;
+                }
+            .study-row{
+                display: flex;
+                align-item: center;
+                flex-wrap: wrap;
+             }
+             .study-right-col{
+                flex-basis: 50%;
+             }
+             .study-right-col img{
+                width: 100%;
+              }
+              .study-left-col{
+                flex-basis: 50%;
+              }
+              .study-text{
+                max-width: 350px;
+                font-weight: bold;
+              }
+              .study-text button{
+                margin 30px 0;
+              }
+              .study-text h3{
+                margin: 20px 0 10px;
+                font-size: 25px;
+                font-family: 'Dancing Script', cursive;
+            }
+            .study-text h4{
+                font-size: 15px;
+                font-style: italic;
+                color: #797979;
+             }
+
+
+
+
+
+
+             #campus{
+                padding:100px 0;
+                display: flex;
+                align-items: center;
+                flex- wrap;
+            }
+            .campus-left-col{
+                flex-basis: 50%;
+            }
+            .campus-left-col img{
+                width: 100%;
+                 height: auto;
+            }
+            .campus-right-col{
+                flex-basis: 50%;
+                text-align: right;
+            }
+            .campus-Text{
+                max-width:500px;
+                margin-left: 100px;
+                display: inline-block;
+                font-weight: bold;
+            }
+            .campus-Text h3{
+                margin: 20px 0 10px;
+                font-size: 25px;
+                 font-family: 'Dancing Script', cursive;
+
+            }
+            .campus-Text h4{
+                font-size: 15px;
+                font-style: italic;
+                color: #797979;
+            }
+
+           .campus-row{
+                        display: flex;
+                        align-item: center;
+                        flex-wrap: wrap;
+                       }
+
+
+            .common-btn{
+                padding: 12px 20px;
+                background: transparent;
+                outline: none;
+                border: 2px solid #f67c92;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+
+
+
+             #contact{
+                padding: 100px 0;
+                }
+            .contact-row{
+                display: flex;
+                align-item: center;
+                flex-wrap: wrap;
+             }
+             .contact-right-col{
+                flex-basis: 50%;
+             }
+             .contact-right-col img{
+                width: 100%;
+              }
+              .contact-left-col{
+                flex-basis: 50%;
+
+              }
+              .contact-text{
+               max-width: 350px;
+               font-weight: bold;
+
+              }
+
+
+
+
+
+
+
+            #footer{
+                padding: 50px 0 30px;
+            }
+            hr{
+                width: 100%;
+                border: 0;
+                border-top: 1px solid #f67c92;
+             }
+             .footer-row{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+              }
+              .footer-left-col{
+                  flex-basis: 50%;
+                  margin-top: 60px;
+
+              }
+              .footer-right-col{
+                  flex-basis: 35%;
+              }
+              .footer-links{
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+               }
+               .link-title h4{
+                    color: #fab3c4;
+                    margin-bottom: 20px;
+                }
+                .link-title small{
+                        font-size: 13px;
+                        color: #777;
+                 }
+                 .footer-info{
+                        display: flex;
+                        align-items: flex-end;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                 }
+                 .footer-logo img{
+                        width: 150px;
+                 }
+                 .copyright-text, .footer-logo{
+                        flex-basis: 40%;
+                 }
+
+
+
+
+
+                 .social-icons{
+                        width: 50px;
+                        position: fixed;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        z-index: 1;
+                 }
+                 .social-icons img{
+                        display: block;
+                        width: 20px;
+                        margin: 0 auto 20px;
+                        cursor: pointer;
+                 }
+
+
+                .chat-icon{
+                        width: 100px;
+                        position: sticky;
+                        top: 50%;
+                        left:1175px;
+                        bottom:0;
+                        z-index: 100;
+
+                 }
+
+
+               .chat-btn{
+               padding: 12px 20px;
+               background-color: #0033cc;
+               text-color: #fff;
+               outline: none;
+               border: 2px solid #0033cc;
+               font-weight: bold;
+               cursor: pointer;
+               border-radius: 40px;
+               width: 100px;
+               font-size: 17px;
+               }
+
+              .chat-btn a{
+              text-decoration:none;
+              color:#fff;
+              justify-content: center;
+            }
+
+
+
+
+
+
+
+                 @media only screen and (max-width: 770px){
+                      #header{
+                            background-image: none;
+                      }
+                      .container{
+
+                                margin-right: 50px;
+                                margin-left: 50px;
+                                }
+                      .logo{
+                                margin-top: 27px;
+                                width: 70px;
+                      }
+                      .header-text{
+
+                                    margin-top:100px;
+                      }
+                      h1{
+                          font-size:25px;
+                      }
+
+                      #menuBtn{
+
+                                 width: 30px;
+                                 right: 15px;
+
+                              }
+                       #sideNav{
+                                width: 100px;
+                                height: 100vh;
+                                position: fixed;
+                                right: -250px;
+                                top: 0;
+                                background: #80aff;
+                                z-index: 2;
+                                transition: .5s;
+                        }
+                         nav ul li{
+                                    list-style: none;
+                                    margin: 20px 10px;
+                                    height: 70px;
+                                    }
+                         nav ul li a{
+                                      text-decoration: none;
+                                      color: #fff;
+                                       font-weight: bold;
+                                    }
+
+                      .common-btn{
+                                    padding: 10px 16px;
+                                  }
+                      .Get-btn1{
+                                    padding: 10px 16px;
+                                  }
+                      .social-icons img{
+                                        width: 14px;
+                                        margin: 15px auto;
+                                       }
+                      .Get-left-col{
+                                    flex-basis: 100%;
+                                    }
+                      .Get-right-col{
+                                     flex-basis: 100%;
+                                     }
+                      .Get-Text{
+                                margin: 50px 50px 0;
+                                display: inline-block;
+                               }
+                      .Get-Text h3{
+
+                            font-size: 18px;
+                            }
+                      .manage-col{
+                                    flex-basis: 100%;
+                                   margin-bottom: 20px;
+                                  }
+                      .study-left-col{
+                                        flex-basis: 100%;
+                                     }
+                      .study-right-col{
+                                        flex-basis: 100%;
+                                        margin-top: 70px;
+                                     }
+                      .campus-left-col{
+                                      margin-bottom:70px;
+                                      flex-basis: 100%;
+                                      }
+                      .campus-right-col{
+                                         flex-basis: 100%;
+                                        }
+                      .contact-right-col{
+                                        flex-basis: 100%;
+                                        margin-top: 50px;
+                                        margin-top: 50px;
+                                        }
+                      .contact-left-col{
+                                     flex-basis: 100%;
+                                     }
+                      .footer-left-col{
+                                      flex-basis:100%;
+                                      }
+                      .footer-right-col{
+                                  flex-basis: 100%;
+                                  }
+                     .link-title {
+                                    flex-basis: 50%;
+                                    margin-bottom: 30px;
+                                   }
+                     .Get-row{
+                             margin-top: 5px;
+                            }
+
+                      .chat-icon{
+                        width:500;
+
+                        position: sticky;
+                        top: 50%;
+                        left:1175px;
+                        bottom:0;
+                        z-index: 100;
+                       }
+                      .chat-btn{
+                      width: 100px;
+                      height: auto;
+                      margin-bottom: 50px;
+
+                      }
+
+                 }
+
+
+
+
+
+    </style>
+        <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+</head>
+
+<body>
+    <section id="header">
+        <div class="container">
+            <img src="../static/images/logo.png" class="logo"> <!--Swinburne Logo (https://images.app.goo.gl/JbqTA4yJvVJevCHc7) -->
+            <div class="header-text"> <!--Home page first section-->
+                <h1> Learning is never done without Errors And Defeat </h1>
+                <span class="square"> </span>  <!-- Square design after the heading-->
+                <p> Swinburne is a large and culturally diverse organisation. A desire to innovate and bring about positive change motivates our students and staff. The result is in an institution that grows and evolves each year. </p>
+                <button class="common-btn"><a href="https://www.swinburne.edu.au/current-students/">Explore Here</a></button> <!-- Button along with the link to main Swinburne Page-->
+                <div class="line"> <!-- Division for the complete design of lines  and square-->
+                    <span class="line-1"></span><br>
+                     <span class="line-2"></span><br>
+                     <span class="line-3"></span>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <nav id="sideNav"> <!-- Navigation bar with menu-->
+
+        <ul> <!--Menu List -->
+            <li><a href="#header">Home </a></li>
+            <li><a href="#Get-started">Get Started </a></li>
+            <li><a href="#manage">Manage Your Course</a></li>
+            <li><a href="#study">Study Support and Resources</a></li>
+            <li><a href="#campus">Campus Life</a></li>
+            <li><a href="#contact">Contact</a></li>
+
+        </ul>
+    </nav>
+    <img src="../static/images/menu.png" id="menuBtn"> <!-- Menu Icon ( https://images.app.goo.gl/qSjwWrAybYbv2zW9A) -->
+
+    <!-- Get Started-->
+
+    <section id="Get-started">
+        <div class="container Get-row">
+        <div class="Get-left-col"> <!--Left part of the complete section where image is added-->
+            <img src="../static/images/GetStarted.png"> <!-- Image of the Get Started section (https://images.app.goo.gl/SDMqMaJKM45pCLZn6) -->
+        </div>
+        <div class="Get-right-col"> <!-- Right part of the section where text is added -->
+            <div class="Get-Text">
+                <h1>Getting Started with Swinburne</h1>
+                 <span class="square"> </span> <!--Box design -->
+
+                <p> Are you a new student to Swinburne? Welcome! All the vital information you need to help you get started at Swinburne and settle into university life is on this page.</p>
+                <br/>
+                 <button class="Get-btn1" ><a href ="https://www.swinburne.edu.au/life-at-swinburne/getting-started-at-swinburne/">Explore Here</a></button> <!-- Button of this section embedded with the link to the main page of the Swinburne-->
+
+                <br/>
+                <br/>
+
+                <div class="line"> <!--Line and square design to seperate the text-->
+                    <span class="line-1"></span><br>
+                     <span class="line-2"></span><br>
+                     <span class="line-3"></span>
+                </div>
+                <h3> "Education is the key to unlocking the world, a passport to freedom"</h3>
+                <h4>--------Oprah Winfrey</h4>
+
+
+            </div>
+        </div>
+       </div>
+    </section>
+
+    <!--Manage your Course-->
+
+    <section id="manage">
+        <div class="manage-h1">
+        <h1 id="actual-h1">Manage your Course</h1>
+        </div>
+        <div class="manage-row"> <!-- Single row is divided into three seperate columns -->
+            <div class="manage-col"> <!--First column of enrolment -->
+                <img src="../static/images/enrolment.png"> <!-- Enrolment Icon (<div>Icons made by <a href="https://www.flaticon.com/free-icon/web_2799172" title="Icongeek26">Icongeek26</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>)-->
+                <h4>Enrolment</h4>
+                <p>How to Enrol<br/>Planning your Course Structure<br/>Setting up your class timetable
+
+                </p>
+
+            </div>
+             <div class="manage-col"> <!--Second column of paying fees -->
+                 <img src="../static/images/fees.png"> <!-- Icon for paying fees (<div>Icons made by <a href="https://www.flaticon.com/free-icon/charge_2883734" title="iconixar">iconixar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>)-->
+                <h4>Paying your Fees</h4>
+                <p>Pay fees and see my financials<br/>Paying your fees – overview<br/>Loans and discounts
+
+                </p>
+
+             </div>
+             <div class="manage-col"> <!-- Third column for exams and results-->
+                 <img src="../static/images/results.png"> <!--Image for Exams and Results (<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>)-->
+                <h4>Exams and Results</h4>
+                 <p>How to submit work<br/>Exams<br/>Academic integrity
+
+                 </p>
+             </div>
+        </div>
+        <div class="manage-btn"> <!--Button for this section with the link-->
+             <div class="line"> <!--Design beside the button -->
+                    <span class="line-1"></span><br>
+                     <span class="line-2"></span><br>
+                     <span class="line-3"></span>
+                </div>
+            <button class="common-btn"><a href="https://www.swinburne.edu.au/current-students/manage-course/exams-results-assessment/">Explore Here</a></button> <!-- Link to the main page-->
+
+        </div>
+
+    </section>
+
+    <!-- Study Support and Resources-->
+
+    <section id="study">
+        <div class="container study-row">
+            <div class=" study-left-col"> <!-- Left part of the section with Text-->
+                <div class="study-text">
+                    <h1>Study Support and<br/> Resources</h1>
+                    <span class="square"> </span>
+                    <p>Improve your study and academic skills through our Learning and Academic Skills Centre. Attend workshops, advice sessions, and access support for students facing challenges
+                    </p>
+                    <br/>
+                    <button class="common-btn"><a href="https://www.swinburne.edu.au/life-at-swinburne/student-support-services/study-learning-support/">Explore Here</a></button> <!-- Link to the resources-->
+                    <br/><br/>
+                     <div class="line"> <!--Design of line and squares-->
+                         <span class="line-1"></span><br>
+                         <span class="line-2"></span><br>
+                         <span class="line-3"></span>
+                </div>
+                     <h3> "Anything is Possible when you have the right people there to support you"</h3>
+                      <h4>--------Misty Copeland</h4>
+
+                </div>
+            </div>
+             <div class=" study-right-col"> <!--Right part of the section with the image-->
+                 <img src="../static/images/study.png"> <!-- image of study support section (https://images.app.goo.gl/CWNQD7QCWk4hCiBf8) -->
+             </div>
+        </div>
+
+    </section>
+
+
+    <!--Campus life-->
+
+    <section id="campus">
+           <div class="container campus-row">
+        <div class="campus-left-col"> <!--Left part of the section with the image-->
+            <img src="../static/images/campus.jpg"> <!-- Campus section image (https://images.app.goo.gl/jAQxALc4npm2s9Wf8)-->
+        </div>
+        <div class="campus-right-col"> <!--right part of the sections with text-->
+            <div class="campus-Text">
+                <h1>Life at Swinburne</h1>
+                 <span class="square"> </span>
+
+                <p> Immerse yourself in campus life and make the most of the many opportunities available while studying at Swinburne.
+                </p>
+                <br/>
+                 <button class="common-btn" ><a href ="https://www.swinburne.edu.au/life-at-swinburne/">Explore Here</a></button> <!--Button with the link-->
+
+                <br/>
+                <br/>
+
+                <div class="line"> <!--design with line and boxes-->
+                    <span class="line-1"></span><br>
+                     <span class="line-2"></span><br>
+                     <span class="line-3"></span>
+                </div>
+                <h3> "We don't Remember days, we remember moments"</h3>
+                <h4>--------Cesare Pavese</h4>
+
+
+            </div>
+        </div>
+           </div>
+    </section>
+
+    <!--Contact Us-->
+
+    <section id="contact">
+        <div class="container contact-row">
+            <div class="contact-left-col" > <!--left part of the contact section with the text-->
+                <div class="contact-text">
+                    <h1>We'd love to hear from you</h1>
+                    <span class="square"> </span>
+                    <p> We're here for you, and wearing our thinking caps.But first swing by our fantastic ChatBot for all your Questions.</p>
+                    <br/>
+                    <button class="common-btn" ><a href ="/chatbox">Let's Talk</a></button> <!-- button with the link to the next page-->
+                    <br/><br/>
+                      <div class="line"> <!-- design of line and boxes-->
+                         <span class="line-1"></span><br>
+                          <span class="line-2"></span><br>
+                         <span class="line-3"></span>
+                </div>
+                </div>
+
+
+            </div>
+            <div class="contact-right-col" > <!--Right part of the section with the image-->
+                <img src="../static/images/contact.png"> <!--Contact us image (https://images.app.goo.gl/4FxYgAPexq655K3r9) -->
+            </div>
+        </div>
+
+
+    </section>
+
+    <!--- Footer--->
+
+    <section id="footer">
+        <div class="container footer-row">
+            <hr>
+                <div class="footer-left-col">  <!--left part of the footer section-->
+                    <div class="footer-links">
+                        <div class="link-title">
+                            <h4> About </h4>
+                            <small> Our University </small><br/>
+                             <small> Our Structure </small><br/>
+                             <small> Leadership and governance </small><br/>
+                            <small> Swinburne Online </small>
+
+                        </div>
+                        <div class="link-title">
+                            <h4> Library </h4>
+                            <small> Search </small><br/>
+                             <small> Referencing </small><br/>
+                             <small> Study spaces and computers </small><br/>
+                            <small> Services for teachers </small>
+
+                        </div>
+                        <div class="link-title">
+                            <h4> Current Students </h4>
+                            <small> Sign In </small><br/>
+                             <small> Getting started at Swinburne </small><br/>
+                             <small> Manage your course </small>
+
+                        </div>
+                    </div>
+            </div>
+            <div class="footer-right-col"><!-- right part of the footer section with copyright-->
+                  <div class="footer-info">
+                      <div class="copyright-text">
+                          <small>askgeorge@swin.edu.au</small><br/>
+                          <small>copyright 2020 Team18</small>
+
+                      </div>
+                      <div class="footer-logo">
+                          <img src="../static/images/logo.png"> <!--Footer logo image (https://images.app.goo.gl/JbqTA4yJvVJevCHc7)-->
+                      </div>
+                  </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Social icons--->
+
+    <div class=" social-icons"> <!-- Static icons of the social media-->
+        <img src="../static/images/facebook.png"> <!-- facebook logo image (<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+        <img src="../static/images/instagram.png"> <!--instagram logo image (<div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+        <img src="../static/images/twitter.png"> <!-- twitter logo image (<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>) -->
+        <img src="../static/images/linkedin.png"> <!-- Linkedin logo image (<div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>) -->
+    </div>
+
+    <!-- chatbox -->
+    <div class=" chat-icon"> <!-- The icon at the bottom of the page-->
+         <button class="chat-btn" ><a href ="/chatbox">Chat with us </a></button> <!-- Linked to the chatbot page-->
+    </div>
+
+
+    <script>
+
+
+        // CODE FOR OPENING AND CLOSING OF THE MENU BAR
+        var menuBtn = document.getElementById("menuBtn");
+        var sideNav = document.getElementById("sideNav");
+
+        //STLYING OF THE MENU BAR
+        sideNav.style.right = "-250px";
+        menuBtn.onclick = function(){
+        if(sideNav.style.right == "-250px"){
+            sideNav.style.right = "0px";
+           }
+           else{
+                sideNav.style.right = "-250px";
+               }
+           }
+
+        //CODE FOR SMOOTH-SCROLLING OF THE MENU
+	    var scroll = new SmoothScroll('a[href*="#"]',{
+	    speed: 1000,
+	    speedAsDuration: true
+	    });
+
+
+    </script>
+
+
+</body>
+</html>

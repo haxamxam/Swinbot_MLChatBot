@@ -1,0 +1,803 @@
+{"intents": [
+    {"tag": "greeting",
+     "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day", "Hi", "yo", "swinbot", "Swinbot"],
+     "responses": ["<font color = 'black'>Hi my name is Swinbot <span>&#x1f60e;</span>!I can help you with the following things. <ul><li>Enrolment related enquiries</li><li> Fee related enquiries.</li> <li> Course completion enquiries</li><li> General enquiries</li> <li> Play a game if you are bored <span> &#128521;</span> </li> </ul> Please type your question to get started. Please view this link to learn more about Swinburne: <a href='https://www.swinburne.edu.au'>Swinburne University of Technology</a> </font>"],
+     "context": [""]
+    },
+    {"tag": "goodbye",
+     "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+     "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+     "context": []
+    },
+    {"tag": "thanks",
+     "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me", "no thanks", "ok thanks"],
+     "responses": ["Happy to help!, Call my name if you require help with anything else <span> &#128521;</span>"],
+     "context": []
+    },
+    {"tag": "no_response",
+        "patterns": [""],
+        "responses": ["What do you mean by that? Please type your enquiry again" ],
+        "context": []
+    },
+    {"tag": "Game",
+      "patterns": ["I want to play a game", "lets play a game", "wanna play a game", "game", "play a game swinbot", "play a game", "play game"],
+      "responses": ["<iframe src='https://funhtml5games.com?embed=spaceinvaders' style='width:250px;height:250px;border:none;' frameborder='0' scrolling='yes' allowFullScreen></iframe>"],
+      "context": []
+   },
+    {"tag": "chitchat_owners",
+        "patterns": ["Who made you?", "How were you made?","How were you born?" ],
+        "responses": ["My creators are Hamza, Siddesh, Dhairya, Spandana, Aakansha and Vindhya"],
+        "context": [""]
+    },
+    {"tag": "course_advice",
+     "patterns": ["I need help with enrolment", "who can assist me with enrolment?", "what to enroll next semester","I don't know which units to enrol in", "need help in enrolment",  "enrolment related enquiry", "i have an inquriy about my enrolment", "I have questions about my course", "I want some help in enrolment", "I am not sure what units I should enrol in", "enrolment enquiry"],
+     "responses": ["<span>Sure I can help you out!</span><span>&#x1f60e;</span> <ul> <li> I can help you with your current semester enrolment </li> <li> I can also answer general questions related to enrolment like how many subjects you can take per semester.</li></ul>  Please type your question"],
+     "context": ["course_advice"]
+    },
+    {"tag": "course_advice_currentenrolment",
+        "patterns": ["I need help with my current semester enrolment","What are my prerequisites?", "I need assistance with the current semester enrolment", "I have an enquiry about my current semester enrolment", "I have a question about my current semester enrolment", "I have an inquiry about my current semester enrolment" , " i am not sure how many units to take per semester", "how many subjects should I take in the current semester?", "need help with current semester enrolment", "need help with current enrolment", "who can help me with my current semester enrolment?", "current semester enrolment", "need help with current semester enrolment", "enrolment current semester", "how many subjects can i take?", "current semester"],
+        "responses": ["<span>Sure I can help you out with your question and current semester!</span><span>&#x1f60e;</span> <ul> <li> Please mention the course you are studying for example (Masters of Information Technology) </li></ul>  If you would like to ask something else please let me know"],
+        "context": ["course_advice"]
+    },
+   {"tag": "course_completion",
+        "patterns": ["How long to complete a course?", "How long will it take to complete my course?", "how long to complete my course?", "how long should my course take to finish?", "course completion enquiry", "course completion enquiries", "how long should it take to complete my course", "course completion"],
+         "responses": ["<font color = 'black'>Sure I can help your figure our how long you have left.<ul><li>Please tell me your type of course you are undertaking (for example Masters, Certificate or Diploma ) </li></ul> Please type your answer</font>"],
+         "context": ["course_advice"]
+    },
+  {"tag": "course_code",
+      "patterns": ["MA-IT1 International student", "masters of it international", "mait1 international", "ma-it1 international student", "masters of it international", "mait1 intl", "masters it international"],
+      "responses": ["The Master of Information Technology provides the knowledge and skills required to design, develop and maintain complex systems using state-of-the-art technologies and methodologies. It includes a general introduction to ICT and provides the opportunity for students to gain advanced specialist skills in areas such as networks, software development, and information systems analysis and management <ul><li>The course fee for an International Student in Masters of Information Technology is A$34760 (annual for 2021)</li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Master-of-Information-Technology-MA-IT1/international'>IT International Student</a></li></ul> Please let me know if you would like to know something else"],
+      "context": ["fees_advice"]
+  },
+  {"tag": "course_code_d",
+      "patterns": ["MA-IT1 Domestic student", "masters of it domestic", "mait1 domestic", "masters it domestic", "mait1 local", "masters it local", "mait local"],
+      "responses": ["The Master of Information Technology provides the knowledge and skills required to design, develop and maintain complex systems using state-of-the-art technologies and methodologies. It includes a general introduction to ICT and provides the opportunity for students to gain advanced specialist skills in areas such as networks, software development, and information systems analysis and management. <ul><li>The course fee for Commonwealth Supported Place for Domestic Student in Masters of Information Technology is $9,527 else the fee is $31,880 </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Master-of-Information-Technology-MA-IT1/local'>IT Domestic Student</a></li></ul> Please let me know if you would like to know something else"],
+      "context": ["fees_advice"]
+  },
+  {"tag": "course_code_pc",
+      "patterns": ["MA-ITPC1 International student", "masters of it pc international", "maitpc international", "mait pc international", "masters it professional international", "mait pc international", "masters it pc international", "masters of itpc international", "maitpc international", "mitpc international"],
+      "responses": ["The Master of Information Technology (Professional Computing) is a 12-unit program of advanced studies in information technology (IT) with an emphasis on enhancing the ability of graduates to gain professional employment in the IT industry. <ul><li>The course fee for Masters of Information Technology Professional Computing is $26,070 (annual for 2021)* </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Master-of-Information-Technology-(Professional-Computing)-MA-ITPC1/international'>IT Professional Computing</a></li></ul> Please let me know if you would like to know something else"],
+      "context": ["fees_advice"]
+  },
+  {"tag": "course_code_gd1d",
+        "patterns": ["GD-IT1 International student", "diploma it international", "gdit1 international", "gdit intl", "gdit international", "graduate diploma it international", "Graduate Diploma of Information Technology international" ],
+        "responses": ["The Graduate Diploma of Information Technology course is concerned with the accumulation of theoretical knowledge and practical skills related to the design, construction, operation, support and maintenance of information technology (IT) solutions <ul><li>The fees for Graduate Diploma in IT is A$34760 (annual for 2021)*  </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Graduate-Diploma-of-Information-Technology-GD-IT1/international'>Graduate Diploma in IT International Students</a></li></ul> Please let me know if you would like to know something else"],
+        "context": ["fees_advice"]
+  },
+  {"tag": "course_code_gdd",
+        "patterns":["GD-IT1 Local Student","diploma it local", "gdit1 domestic", "gdit local", "gdit domestic", "graduate diploma it domestic", "Graduate Diploma of Information Technology domestic"],
+        "responses": ["The Graduate Diploma of Information Technology course is concerned with the accumulation of theoretical knowledge and practical skills related to the design, construction, operation, support and maintenance of information technology (IT) solutions <ul><li>The course fee for Commonwealth Supported Place is $9,527 per annum else $$31,880 (annual for 2021)* </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Graduate-Diploma-of-Information-Technology-GD-IT1/local'>Graduate Diploma in IT Local Students</a></li></ul> Please let me know if you would like to know something else"],
+        "context": ["fees_advice"]
+  },
+  {
+    "tag": "MDSci_coursecode_intl",
+    "patterns": ["Master of Data Science international","MDSci international", "masters data science international", "i am studying masters of data science international", "i am enrolled in masters data science international", "studying masters data science international", "enrolled in masters data science international"],
+    "responses": ["The Master of Data Science is designed to prepare students to work on the forefront of data-driven decision-making and forecasting. Build on your existing undergraduate qualification and/or industry experience as you develop an in-depth understanding of activities and processes related to managing, interpreting, understanding and deriving knowledge from large data sets. <ul><li>The course fee for Masters of Data Science is $36,000 (annual for 2021)* </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Master-of-Data-Science-MA-DATASC/international'>Masters of Data Science International</a></li></ul> Please let me know if you would like to know something else"],
+    "context": []
+  },
+  {
+    "tag": "MDSci_coursecode_local",
+    "patterns": ["Master of Data Science local","MDSci local", "masters data science local", "i am studying masters of data science local", "i am enrolled in masters data science local", "studying masters data science local", "enrolled in masters data science local", "Master of Data Science domestic","MDSci domestic", "masters data science domestic", "i am studying masters of data science domestic", "i am enrolled in masters data science domestic", "studying masters data science domestic", "enrolled in masters data science domestic"],
+    "responses": ["The Master of Data Science is designed to prepare students to work on the forefront of data-driven decision-making and forecasting. Build on your existing undergraduate qualification and/or industry experience as you develop an in-depth understanding of activities and processes related to managing, interpreting, understanding and deriving knowledge from large data sets. <ul><li>The course fee for Masters of Data Science is $27,840 (annual for 2021)* </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Master-of-Data-Science-MA-DATASC/local'>Masters of Data Science Domestic</a></li></ul> Please let me know if you would like to know something else"],
+    "context": []
+  },
+
+  {"tag":"MCyb_intl",
+    "patterns":["Master of Cybersecurity international","MCyb international","mcyb international", "masters cyber security international", "master cyb security international", "cyber security masters international", "masters in cyber security international", "enrolled in masters cyber security international", "masters of cyber security international"],
+    "responses": ["The Master of Cybersecurity equips you with the knowledge and skills required to develop and maintain complex computing systems using cutting-edge technology and methods. <ul><li>The course fee for Masters of Cyber Security is $36,000 (annual for 2021)* </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Master-of-Cybersecurity-MA-CYBSEC/international'>Masters of Cyber Security International</a></li></ul> Please let me know if you would like to know something else"],
+    "context": []
+  },
+  {"tag":"MCyb_local",
+    "patterns":["Master of Cybersecurity local","MCyb local","mcyb local", "masters cyber security local", "master cyb security local", "cyber security masters local", "masters in cyber security local", "enrolled in masters cyber security local", "masters of cyber security local", "Master of Cybersecurity domestic","MCyb domestic","mcyb domestic", "masters cyber security domestic", "master cyb security domestic", "cyber security masters domestic", "masters in cyber security domestic", "enrolled in masters cyber security domestic", "masters of cyber security domestic"],
+    "responses": ["The Master of Cybersecurity equips you with the knowledge and skills required to develop and maintain complex computing systems using cutting-edge technology and methods. <ul><li>The course fee for Masters of Cyber Security is $30,880 (annual for 2021)* </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Master-of-Cybersecurity-MA-CYBSEC/local'>Masters of Cyber Security Domestic</a></li></ul> Please let me know if you would like to know something else"],
+    "context": []
+  },
+  {"tag":"MSNS_intl",
+    "patterns": ["Master of Science(Network Systems) international","MSNS international", "masters of science network systems international", "studying masters science network systems international"],
+    "responses": ["The Master of Science (Network Systems) is a 12-unit masters program concerned with the design, management, maintenance and service provision of private and public networks. <ul><li>The course fee for Masters of Network Systems is A$26070 (annual for 2021)* </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Master-of-Science-(Network-Systems)-MA-SNS/international'>Masters of Network Systems International</a></li></ul> Please let me know if you would like to know something else"],
+    "context": []
+  },
+  {"tag":"MSNS_local",
+    "patterns": ["Master of Science(Network Systems) local","MSNS local", "masters of science network systems local", "studying masters science network systems local", "Master of Science(Network Systems) domestic","MSNS domestic", "masters of science network systems domestic", "studying masters science network systems domestic"],
+    "responses": ["The Master of Science (Network Systems) is a 12-unit masters program concerned with the design, management, maintenance and service provision of private and public networks. <ul><li>The course fee for Masters of Network Systems is A$26070 (annual for 2021)* </li> <li>You can check you fees at this link <a href='https://www.swinburne.edu.au/study/course/Master-of-Science-(Network-Systems)-MA-SNS/local'>Masters of Network Systems Domestic</a></li></ul> Please let me know if you would like to know something else"],
+    "context": []
+  },
+	{"tag": "coursework",
+		"patterns":["Masters","masters","i am doing masters", "current doing masters", "i am doing masters"],
+		"responses":["Swinburne has an international reputation for offering postgraduate programs with a career-focused curriculum. More information about Swinburne Master programs can be found here: <a href='https://www.swinburne.edu.au/courses/study-levels-explained/master-degrees/'>Swinburne University of Technology Masters Degree</a>  <ul><li> Please mention if you are doing Masters by research or coursework</li></ul>Please type your answer"],
+		"context":["course_advice"]
+  },
+  {"tag": "coursework_research",
+		"patterns":["masters by research","masters in research","i am doing masters by research", "current doing masters in research", "i am doing masters by research", "masters research", "masters by research", "research"],
+		"responses":["A master degree by research is designed to show mastery of inquiry in a field of a discipline or profession. You’ll undertake supervised research and complete a thesis of 50,000 to 60,000 words <ul><li> More information about Masters by Research degree can be found at: <a href='https://www.swinburne.edu.au/courses/applying/how-to-apply-research-degree/entry-requirements/'> Swinburne University Masters by Research</a> </li><li>  A Masters by research duration can be 2 years full-time or 4 years part-time </li> </ul>If you would like to ask anything else please let me know."],
+		"context":["course_advice"]
+  },
+  {"tag": "coursework_coursework",
+		"patterns":["masters by coursework","masters in coursework","i am doing masters by coursework", "current doing masters in coursework", "i am doing masters by coursework", "masters coursework", "masters by coursework", "coursework", "masters coursework"],
+		"responses":["A master degree by coursework gives a high-level overview and theoretical analysis of a specific field of study or professional practice. It’s the final step for anyone who completed graduate certificates and graduate diplomas <ul><li> More information about Masters by Coursework degree can be found at: <a href='https://www.swinburne.edu.au/courses/study-levels-explained/master-degrees/'> Swinburne University Masters by Coursework</a></li><li> A Masters by coursework duration can be 2 years full-time or 4 years part-time</li></ul>If you would like to ask anything else please let me know."],
+		"context":["course_advice"]
+	},
+	{"tag":"certificate",
+		"patterns":["Certificate","Graduate Certificate", "certificate", "grad certificate"],
+		"responses":["Graduate Certificate will provide students with a sample of entry-level skills which introduce techniques used in the design and construction of solutions. Students will gain specialist skills and become capable of working with some solutions at an entry level <ul><li> The Duration of Graduate Certificate can be 12 months full-time or 2 years part-time </li></ul> If you would like to ask something else please let me know."],
+		"context":["course_advice"]
+	},
+	{"tag":"diploma",
+		"patterns":["Diploma","PG Diploma ","Graduate Diploma", "pg diploma", "diploma"],
+		"responses":["A graduate diploma is the second stage of a master degree focused on learning additional professional skills, critical analysis, theory and practice. These courses are designed for people learning new skills, or as recognition for anyone without a formal qualification.<ul> <li> The length of the Diploma courses is 1.5 years </li></ul> Please let me know if you have any other questions."],
+		"context":["course_advice"]
+  },
+    {"tag": "MIT",
+      "patterns": ["Masters of Information Technology","masters of information technology","MIT","mit","masters of it", "masters in information technology", "masters information technology", "mait1"],
+      "responses": ["Okay Great! You are studying Master of Information Technology. Please mention your Semester."],
+      "context": []
+   },
+   {"tag": "MIT-PC",
+      "patterns": ["Masters of Information Technology-Professional Computing","MIT-PC","mit-pc", "mitpc", "masters of it pc", "masters professional computing it", "masters it pc", "masters of information technology pc", "maitpc"],
+      "responses": ["Okay Great! You are studying Master of Information Technology-Professional Computing. Please mention your Semester"],
+      "context": []
+  },
+  {
+    "tag":"GC-IT",
+    "patterns": ["Graduate Certificate of Information Technology","GC-IT", "graduate certificate it", "gcit", "certificate it"],
+    "responses": ["Okay Great! You are studying Graduate Certificate of Information Technology. Please mention your Semester"],
+    "context": []
+  },
+  {
+    "tag":"GD-IT",
+    "patterns": ["Graduate Diploma of Information Technology","GD-IT", "gdit", "graduate diploma it", "GDIT", "gd it"],
+    "responses": ["Okay Great! You are studying Graduate Diploma of Information Technology. Please mention your Semester"],
+    "context": []
+  },
+  {
+    "tag": "MDSci",
+    "patterns": ["Master of Data Science","MDSci", "masters data science", "i am studying masters of data science", "i am enrolled in masters data science", "studying masters data science", "enrolled in masters data science"],
+    "responses": ["Okay Great! You are studying Master of Data Science. Please mention your Semester"],
+    "context": []
+  },
+
+  {"tag":"MCyb",
+    "patterns":["Master of Cybersecurity","MCyb", "masters cyber security", "master cyb security", "cyber security masters", "masters in cyber security", "enrolled in masters cyber security", "masters of cyber security"],
+    "responses": ["Okay Great! You are studying Master of Cybersecurity. Please mention your semester"],
+    "context": []
+  },
+  {"tag":"MSNS",
+    "patterns": ["Master of Science(Network Systems)","MSNS", "masters of science network systems", "studying masters science network systems"],
+    "responses": ["Okay Great! You are studying Master of Science (Network Systems). Please mention your Semester"],
+    "context": []
+  },
+
+  {"tag": "fees_advice",
+    "patterns": ["I need help with fees","I want help in paying fees","I need help in fees payment","fees payment","fees","I dont know my fees","I dont know how to pay fees","What is my course fees?", "fee enquiry"],
+    "responses": ["Sure I can help you out with your fees!<span>&#x1f60e;</span> <ul><li>Please mention your course code for example (MA-IT1 for Masters of Information Technology)</li><li>Please also mention if you are an international student or domestic student</li><li> If you would like to connect with a student advisor let me know</li></ul> Please type your enquiry "],
+    "context": ["fees_advice"]
+    },
+  {"tag": "general_advice",
+    "patterns": ["general questions","I have a general question","I need help with general questions","I have a general enquiry","general enquiry","I need help with general enquiries","I need help with general enquiry", "frequently asked questions", "genera enquiry"],
+    "responses": ["<span>Sure I can answer some of the general questions!</span><span>&#x1f60e;</span> <ul> <li> Ask me frequently asked questions like What is a Professional Placement?</li></ul> Please type your questions "],
+    "context": ["general_advice"]
+  },
+  {"tag": "gen_q1",
+    "patterns":["How long will it take to receive my degree?", "when can i graduate", "how long till i get my degree?"],
+    "responses": ["The course length depends on the number of units a student is undertaking per semester. The degree completion can also largely depend on the course and the credits required to complete a specific degree. You can see how many units are required to complete a particular degree on our Course Pages. Alternatively, you can have a look at our Course Planners for more detailed information about how to manage a specific degree"],
+    "context": ["general_advice"]
+    },
+  {"tag": "placements",
+    "patterns": ["What are placements","what are professional placements program","how do i get a professional placement?","how do i get a placement?","can you tell me about professional placements", "professional placements", "what is professional placement"],
+    "responses": ["The Professional Placements program is a fantastic way to work in a position relevant to your studies before you graduate. Professional Placements are optional, full-time, paid positions and are 6 or 12 months in duration. Placements earn you credits towards your degree but will extend the length of your course overall. A professional placement helps you to gain a competitive edge on graduation, clarifying your career path and developing your professional confidence. You will meet and be mentored by industry professionals and gain valuable insight into organisational structures and operations <ul><li> Please view think link for more information about Professional Placements : <a href='https://www.swinburne.edu.au/collaboration-partnerships/placements-internships/'> Student Placements </a></li></ul> Please let me know if you require anything else"],
+    "context": ["general_advice"]
+  },
+  {"tag":"core_units",
+     "patterns": ["what are core units?", "what does core units mean?", "what is core unit ?", "what is the meaning of core units ?", "what are my core units ?"],
+      "responses": ["Your course planner shows you how many core (compulsory) and component (or elective) units you must enrol in for each semester or teaching period.Your course planner also shows when you need to study your major or minor units if you're completing a degree.You must read your <a href='https://www.swinburne.edu.au/app/web-course-planners/home/' >Course Planner</a> before you enrol online. It will help you plan the units you enrol in.please let me know if you need to contact Student advisor"],
+      "context": ["general_advice"]
+  },
+  {"tag": "major_units",
+      "patterns": ["what are major units?", "what is a major", "what is a major unit"],
+      "responses": ["A Major comprises of 100 credit points that generally builds on, or is complementary to, the introductory core studies."],
+      "context": ["general_advice"]
+  },
+  {"tag": "elective_units",
+       "patterns": ["what are elective units?", "what is meant by elective units", "elective units"],
+       "responses": ["You can view all your major, minor and elective options for your course by visiting <a href='http://www.swinburne.edu.au/study/options/find/' >Course Search </a>.Once you've selected your course, scroll down to Course details to see all your course requirements and options.If you would like to contact a student advisor, Please let me know."],
+       "context": ["general_advice"]
+    },
+  {"tag": "prerequisites",
+        "patterns": ["what is a prerequisite?", "pre requisite", "prerequisite", "what is prerequisite"],
+        "responses": ["Prerequisite — you must complete this unit before enrolling in a following unit. For example, Innovative Business Practice is a prerequisite unit students must complete before they can enrol in the unit Advanced Innovative Business Practice. Co-requisites — you must complete this pair of units at the same time. Concurrent prerequisites — you may complete these units either at the same time or before the higher unit. If you would like to contact a student advisor, Please let me know."],
+        "context": ["general_advice"]
+    },
+  {"tag": "course_consult",
+        "patterns": ["I am not sure what to study, who can help me for course advice?", "not sure what to study", "confused about what to study"],
+        "responses": ["Our Course Consultants <a href= 'https://www.swinburneonline.edu.au/contact-us'>Course Consultants </a> are always happy to recommend a study load and specific units for you to start off with based on your needs before you begin your degree with us. Once you are enrolled, you can contact one of our Student Advisors https://www.swinburneonline.edu.au/current-students/current-student-support at any time and they can help you set yourself up with a study plan designed to maximise your success."],
+        "context": ["general_advice"]
+  },
+  {"tag": "previous_study",
+        "patterns": ["Do I need to do any previous study before I enrol?", "previous study required?", "is previous study required before enroling", "rpl", "prior study experience"],
+        "responses": ["Also known as ‘advanced standing’, academic credit can be granted for:•Relevant study experience • Relevant work or life experience. You'll need to complete an application form for academic credit or recognition of prior learning (RPL). If you’re granted credit for previous relevant study or experience, you may be able to finish your program sooner! Please visit this link to know more <a href='https://www.swinburne.edu.au/courses/enrolling/credit-for-prior-study-experience/' >Prior study experience </a>If you would like to contact a student advisor, Please let me know."],
+        "context": ["general_advice"]
+  } ,
+  {"tag": "each_semester",
+        "patterns": ["How many units do I have to take each semester?", "how many units can I take", "how many units to take each sem", "what are the units i can take each sem"],
+        "responses": ["It depends upon the study load you choose as for local students you can either choose part time or full-time study load wherein for international students only full time study load is acceptable to fulfill the visa conditions. "],
+        "context": ["general_advice"]
+  },
+  {"tag": "study_hours",
+  "patterns": ["How many study hours per week are suitable per unit?"],
+  "responses": ["For most undergraduate students, we recommend you allow eight hours of study a week per unit. For postgraduate education students (domestic only), we recommend 10 hours a week per unit and for postgraduate business students and undergraduate design students we recommend allowing 12 hours a week of study per unit"],
+  "context": ["general_advice"]
+  },
+  {"tag": "get_help",
+  "patterns": ["How can I get help in enrolment?"],
+  "responses": ["When you enrol to study a degree with us, you will nominate how many units you would like to select per teaching period, based on a recommendation from one of our Course Consultants <a href='https://www.swinburneonline.edu.au/current-students/current-student-support' > Student Support </a>. From here, our enrolments team will allocate you automatically to the units they feel will be best suited to your needs, so you don’t need to worry about choosing units. If you want to choose something different than what you are allocated to, that is no problem, just get in touch with our Student Liaison Team and they will take care of it for you."],
+  "context": ["general_advice"]
+  },
+  {"tag": "enrol_in",
+  "patterns":["What units should I enrol in?","unit enrollment"],
+  "responses": ["When you enrol to study a degree with us, you will nominate how many units you would like to select per teaching period, based on a recommendation from one of our Course Consultants <a href= 'https://www.swinburneonline.edu.au/current-students/current-student-support'>Student Support</a>. From here, our enrolments team will allocate you automatically to the units they feel will be best suited to your needs, so you don’t need to worry about choosing units. If you want to choose something different than what you are allocated to, that is no problem, just get in touch with our Student Liaison Team and they will take care of it for you."],
+  "context": ["general_advice"]
+  },
+  {"tag": "deadline",
+  "patterns": [" deadline to enroll", "deadline enroll", "deadline for enrolment", "what is the deadline for enrolment", "is there a deadline for enrolment", "should there be a deadline for enrolment?"],
+  "responses": ["To provide flexibility for our students, census dates and last dates to withdraw without fail have been extended by two weeks for standard Semester 2 subjects (which includes Semester 2, Semester 2 Early Start, and Semester 2 Extended subjects). Dates for non-standard subjects that start in the second half of the year have also been reviewed and some have been extended. All date changes are now reflected in the Handbook. As dates vary by subject, always Check the Handbook entry for each of your enrolled subjects and be aware of these important dates"],
+  "context": ["general_advice"]
+  },
+  {"tag": "cancel_my",
+  "patterns": ["cancel enrolment","I want to cancel my enrolment","how can i cancel my enrolment?"],
+  "responses": ["Before you apply to withdraw, it is strongly recommended that you discuss the matter with your Course Coordinator. ... You cannot withdraw from your course enrolment to avoid the requirement to 'Show Cause' for unsatisfactory academic progress in a given academic year"],
+  "context": ["general_advice"]
+  },
+  {"tag":"defer",
+    "patterns": ["I want to take leave of absence/defer, how can I do that?"],
+    "responses": ["You may be able to take time off your course by taking a leave of absence or deferring....Apply via My Enrolment.Log in to My Enrolment using your SIMS username (student ID) and password.Select 'Leave of Absence' from the left-hand navigation.Complete the application and select confirm to submit.If you would like to contact a student advisor, Please let me know."],
+    "context": ["general_advice"]
+    },
+  {"tag": "units_can",
+  "patterns": ["What units can I take?","which units can I take","what are the units available?"],
+  "responses": ["This is the fun part where you get to choose your academic adventure. Most course planners show a recommended course structure and you can change some of the recommended units.You can choose your component or elective units and your major and minor units. You need to study some units in a certain order"],
+  "context": ["general_advice"]
+  },
+  {"tag": "stay_track",
+  "patterns": ["How to stay on track with my study?","study tracker"],
+  "responses": ["It's totally normal to experience some ups and downs while you're at university, but you don't have to go through it alone. If you’re having trouble with your studies or feeling unsure about your course, we’re here to help you. Our Academic Development Advisers can chat to you about any problems you’re having and help you work out how to get your studies back on track"],
+  "context": ["general_advice"]
+  },
+  {"tag": "study_plan",
+  "patterns": ["Who can help me with my study plan?","study plan","help with study plan","I need help with study plan"],
+  "responses": ["Looking for extra study support?If it’s been a while since you studied last, if you just want to learn some new ways to improve your marks, or if your grades are faltering, the Learning and Academic Skills (LAS) Centre is designed to help you achieve your academic goals.<a href='https://www.swinburne.edu.au/life-at-swinburne/student-support-services/study-learning-support/learning-academic-skills-centre/'</a>"],
+  "context": ["general_advice"]
+  },
+  {"tag": "prior_learning",
+  "patterns": ["How do I apply for recognition of prior learning?"],
+  "responses": ["If you are thinking about applying for recognition of prior learning please book a one-on-one appointment with your course coordinator or, if you are new to Swinburne, please submit an enquiry and one of our friendly staff members will respond to you."],
+  "context": ["general_advice"]
+  },
+  {"tag": "assessment_support",
+  "patterns": ["How to get assessment support?","assessment support"],
+  "responses": ["When studying a degree and you are struggling with motivation, time management or simply need help with an assignment or some technical support, you can get in touch with our Student Advisors. Call 1300 937 765 from Australia, +61 3 9956 0777 for Australian citizens living overseas and 800 8001 1222 for international students, anytime between 9am – 9pm (AEST) Monday to Friday and 10am – 6pm (AEST) on weekends and public holidays – or fill out a Help Web Form <a href='https://www.swinburneonline.edu.au/current-students/help/'>Help Form</a> to speak to one of our Student Advisors. If you’re enrolled in a TAFE course you will have support in MyQuest https://www.swinburneonline.edu.au/current-students/myquest/ – your online learning environment. A dynamic live chat means you can find out who else is online at the same time as you and ask other students questions. There is also a discussion board where you can post questions that will be answered by a pool of industry trained teachers, waiting to help you."],
+  "context": ["general_advice"]
+  },
+  {"tag": "timetable",
+    "patterns": ["How do I set my Class Timetable?","timetable","class timetable"],
+    "responses": ["Setting up your class timetable.Follow these three steps to plan and schedule your class timetable.<a href='https://www.swinburne.edu.au/current-students/manage-course/enrolment-timetable/class-timetable/'>Class Timetable </a>.To see when you can access your timetable and register into classes, check the key timetable dates.<a href='https://www.swinburne.edu.au/courses/enrolling/key-timetable-dates/'>Key Timetable dates </a>"],
+    "context": ["general_advice"]
+  },
+  {"tag":"clash_timetable",
+  "patterns": ["What to do if my lecture is clashing with another unit’s tutorial?"],
+  "responses": ["Visit this link to know more <a href='https://www.swinburne.edu.au/courses/enrolling/setting-up-your-class-timetable/'>Setting up class timetable</a>"],
+  "context": ["general_advice"]
+  },
+  {"tag": "gpa",
+  "patterns": ["What is GPA?"],
+  "responses": ["A GPA is a calculation for higher education results. There are two GPA scales commonly used in Australia and overseas, the 4 point and the 7 point scale. These scales differ in the grade points that they allocate to each grade but the method of calculation is the same. Swinburne uses a 4 point method. To find out how to calculate a GPA visit our Grade Point Average page"],
+  "context": ["general_advice"]
+  },
+  {"tag": "grades",
+  "patterns": ["access my grades ", "how can i access my grades", "need to access my grades", "access my grades"],
+  "responses": ["You can access your results online by logging into My Results <a href='https://s1.swin.edu.au/eStudent/login.aspx?ReturnUrl=/eStudent/SM/ResultsDtls10.aspx?f=%23SU.EST.RSLTDTLS.WEB&&f=#SU.EST.RSLTDTLS.WEB'>Results</a>. You can also email yourself an unofficial transcript. If you can't see your results:The results release date may not have passed results may not have been certified you may have a sanction preventing your results from being released (e.g. outstanding fees or library fines)"],
+  "context": ["general_advice"]
+  },
+  {"tag": "extension_assign",
+  "patterns": ["How can I apply for assignment extension?", "need assignment extension", "help assignment extension", "i need an extension for assignment", "extension for assignment"],
+  "responses": ["If you’re seeking an extension of seven calendar days or less (from the original due date) you must apply on or before the assessment due date.Applications for an extension must be made directly to the unit convenor or teacher, by email or phone. Log in to canvas to find unit convenor or teacher contact detailsIf you would like to contact a student advisor, Please let me know."],
+  "context": ["general_advice"]
+    },
+  {"tag":"online_units",
+    "patterns": ["Can I study a mixture of on campus and online units?","online units"],
+    "responses":["If you are an on-campus student at Swinburne University of Technology, you may be able to study some of your units online, through Swinburne Online. Speak to a Course Consultant <a href='https://www.swinburneonline.edu.au/contact-us/'>Contact us</a> today to find out if we can meet your unit requirements."],
+    "context": ["general_advice"]
+    },
+  {"tag": "online_learning",
+  "patterns": ["online learning","need help with online learning"],
+  "responses": ["Improve your study and academic skills through our Learning and Academic Skills Centre. Attend workshops, advice sessions, and access support for students facing challenges"],
+  "context": []
+  },
+  {"tag": "online_enroll",
+  "patterns": ["enrolling online","students should before enrolling online", "how to enrol online"],
+  "responses": ["Congratulations for being accepted to Swinburne! Now that you’ve received your offer from us, it’s time to enrol! We know the enrolment process can be confusing. Use this step-by-step process to enrol online as a new or continuing local or international student.Use this link for further process.<a href='https://www.swinburne.edu.au/courses/enrolling/how-to-enrol/'>How to enroll</a>"],
+  "context": []
+  },
+  {"tag": "IT_issues",
+  "patterns": ["IT issues while doing online assessments","IT issues", "facing it issues"],
+  "responses": ["If your preparation for an in-semester assessment task is affected by illness or other extraordinary circumstances outside your control, you may apply in advance for an extension to the due date"],
+  "context": []
+  },
+  {"tag": "student_advisor",
+        "patterns": ["I want to contact a student advisor", "requesting to contact a student advisor", "Need to contact the student advisor", "How can I get in contact with the student advisor", "student advisor", "contact student advisor"],
+        "responses": ["A Student Advisor is available seven days a week to offer our university students support in a whole range of areas including, but not limited to technical and academic support or even motivation to start studying. They can be contacted on 1300 937 765 from Australia, +61 3 9956 0777 for Australian citizens living overseas and 800 8001 1222 for international students, anytime between 9am till 9pm (AEST) Monday to Friday and 10am till 6pm (AEST) on weekends and public holidays. Otherwise you can email them anytime at  <a href = 'mailto: help@swinburneonline.com'>Send Email to Student Advisor</a>"],
+        "context": ["course_advice"]
+  },
+  {"tag": "course_advice_sem1",
+     "patterns": ["Semester 1", "I am studying semester 1", " sem 1", " sem one", " semester one","doing Semester one","Sem 1", "masters of semester 1", "semester one", "sem 1"],
+     "responses": ["Okay great!So you are in the first semester. You can enquire about the following things. <ul> <li>Mention a unit name to know about pre requisites for that unit for example (Creating Web Applications)</li> <li> Mention your request to contact a student advisor for more support<li> Mention other general enquiries </li></ul>  Please type your question "],
+     "context": ["course_advice"]
+  },
+  {"tag": "course_advice_sem2",
+    "patterns": ["Semester 2", "I am studying semester 2", " sem 2", " sem two", " semester 2","Semester two"," Sem 2", "masters of semester 2", "semester two", "sem 2", "i am in semester two", "i am doing masters semester two", "i am in semester 2"],
+    "responses": ["Okay great! So you are in the second semester. You can enquire about the following things <ul> <li>Mention a unit name to know about pre requisites for that unit for example (Creating Web Applications)</li> <li> Mention your request to contact a student advisor for more support<li> Mention other general enquiries </li></ul>  Please type your question "],
+    "context": ["course_advice"]
+ },
+ {"tag": "course_advice_sem3",
+  "patterns": ["Semester 3", "I am studying semester 3", " sem 3", " sem three", " semester 3","Semester three"," Sem 3", "masters of semester 3", "semester three", "sem 3", "i am in semester three", "i am doing masters semester three", "i am in semester 3"],
+  "responses": ["Okay great! So you are in the third semester. You can enquire about the following things <ul> <li>Mention a unit name to know about pre requisites for that unit for example (Creating Web Applications)</li> <li> Mention your request to contact a student advisor for more support<li> Mention other general enquiries </li></ul>  Please type your question "],
+  "context": ["course_advice"]
+},
+{"tag": "course_advice_sem4",
+  "patterns": ["Semester 4", "I am studying semester 4", " sem 4", " sem four", " semester 4","Semester four"," Sem 4", "masters of semester 4", "semester four", "sem 4", "i am in semester four", "i am doing masters semester four", "i am in semester 4", "in my last semester", "i am in the final semester", "in my final semester", "doing my final semester", "enrolled in final semester", "fourth semester studying"],
+  "responses": ["Okay great! so you are in the fourth semester. You can enquire about the following things <ul> <li>Mention a unit name to know about pre requisites for that unit for example (Creating Web Applications)</li> <li> Mention your request to contact a student advisor for more support<li> Mention other general enquiries </li></ul>  Please type your question "],
+  "context": ["course_advice"]
+},
+    {"tag": "web_apps",
+        "patterns": ["Creating Web Applications", "creating web applications", "COS60004", "creating web aplications", "creating web apps", "cos60004"],
+        "responses": ["This unit introduces the technology of the World Wide Web and concepts of Client-Server computing. Students will develop dynamic, data-driven web sites using a both client and server-side programming languages. The following are the Pre requisites and Concurrent Requisite for this unit. <ul> <li>Pre requisites: INF10008 Introduction to Business Computing </li> <li> Concurrent Requisites: TNE60003 Introduction to Network Programming or COS60002 Web Development </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Creating-Web-Applications-COS60004/local'>Creating Web Applications</a></li></ul> If you would like to contact a student advisor, Please let me know. "],
+        "context": []
+    },
+  {"tag": "programming_unit",
+		"patterns": ["Introduction to Programming", "introduction to programming", "COS60006", "cos60006", "intro to programming"],
+		"responses": ["Students who successfully complete this Unit should be able to Apply code reading and debugging techniques to analyse, interpret, and describe the purpose of program code, and locate within this code errors in syntax, logic, style and or good practice. Describe the principles of structured programming, and relate these to the syntactical elements of the programming language used and the way programs are developed.Construct small programs, using the programming languages covered, that include the use of arrays, functions and procedures, parameter passing with call by value and call by reference, custom data types, and pointers.Use modular and functional decomposition to break problems down functionally, represent the resulting structures diagrammatically, and implement these structures in code as functions and procedures.Independently research topics in programming languages or program structure.<ul><li> Pre-requisites: There are no pre-requisites to this unit. </li><li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Introduction-to-Programming-COS60006/local'>Intro to Programming</a></li></ul> If you want to contact a Student supervisor please let me know. Please type your response"],
+		"context": []
+	},
+	{"tag":"data_management",
+		"patterns": ["Data Management for the Big Data Age","data management for the big data age","big data age","COS60009","cos60009", "data management for big data age", "data for big data", "data management big data"],
+		"responses":["This unit is designed to deliver a variety of technologies and techniques used in managing different types of data in the big data age. Database technologies including data modelling and database design at conceptual level, logical level and physical level, query language and processing, transaction management will be introduced. Two types of database systems – SQL and NoSQL will be presented and their differences will be discussed.<ul><li>Co-requisite: COS60006 Introduction to Programming</li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Data-Management-for-the-Big-Data-Age-COS60009/local'>Data Management for Big Data Age</a></li></ul> Please let me know if you need a student advisor"],
+		"context": []
+	},
+    {"tag":"user-centred design",
+		"patterns": ["User-Centred Design","User Centred Design","user-centred design","user centred design","COS70004","cos70004", "user cenetred design", "ucd"],
+		"responses":["This unit of study aims to introduce students to the concept of usability and the process of User-Centred Design as a method of achieving good usability outcomes in software development.<ul><li>Pre-requisite: There are no pre-requisites for this unit </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/User-Centred-Design-COS70004/local'>User Centred Design</a></li></ul> Please let me know if you need to speak to a student advisor"],
+		"context":[]
+	},
+	{"tag":"information_systems",
+		"patterns": ["Business Information Systems","business information systems","information systems","INF60007","inf60007","inf 60007", "business info systems"],
+		"responses":["This unit enables students to analyse and articulate how technology can be used to assist business, without the technology becoming an end in itself. In particular, the unit aims to develop an appreciation for the importance of information to decision-making and how to provide such information to ensure its usefulness to the decision makers. Students gain a strong foundation of business systems fundamentals and are able to evaluate the influence of the Internet on business stakeholders; customers, suppliers, manufacturers, service makers, regulators, managers and employees <ul><li>Pre-requisite: There are no pre-requisites for this unit </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Business-Information-Systems-INF60007/local'> INF60007: Business Information Systems </a></li></ul> Please let me know if you need from a student advisor"],
+		"context":[]
+	},
+	{"tag":"project_management",
+		"patterns": ["Strategic Project Management","strategic project management","project management","Project Management","INF70005","inf70005"],
+		"responses":["This unit examines the concepts, issues and challenges that are critical for implementing, maintaining and completing projects successfully. The reasons behind contemporary organisations move towards a project approach are considered and the common methodologies, tools and techniques of project management are critically evaluated. Students will examine the Project Management Body of Knowledge and its knowledge areas from a strategic perspective and evaluate how an organisation's individual industry, culture, structure and objectives, may influence the project management approach taken. Students will study the risks and challenges that emerge in project management and the tools that have been developed to address these. <ul><li>Pre-requisite: There are no pre-requisites for this unit </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Strategic-Project-Management-INF70005/local'> INF70005: Strategic Project Management </a></li></ul> Please let me know if you want to speak to a student advisor"],
+		"context":[]
+	},
+	{"tag":"data_science",
+		"patterns": ["Introduction to Data Science","introduction to data science","data science","Introduction to data science","COS60008","cos60008", "intro to data science"],
+		"responses":["This unit aims to develop students’ conceptual and practical understanding of the field of data science in the contexts of real-world applications. The students will learn about basic concepts, key techniques and popular tools in various aspects of data science, following the lifecycle of a practical data science project which involves data collection, management, wrangling, analytics and visualisation. They will gain the understanding of how to identify and define data science relevant tasks in practical scenarios, and acquire the ability to apply given techniques and tools to resolve given data science relevant tasks. <ul><li>Pre-requisite: The pre-requiste of this unit is entry to the course MA-ITPC1 Master of Information Technology (Professional Computing) </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Introduction-to-Data-Science-COS60008/local'> COS60008: Introduction to Data Science </a></li></ul>Please let me know if you want to speak to a student advisor"],
+		"context":[]
+	},
+    {"tag": "database_systems",
+        "patterns": ["Database systems","database systems","Database systems","INF60014","inf60014","DS", "dbs"],
+        "responses": ["This unit focuses on key Relational Database Management Systems constructs and concepts required to design and implement a multi-user database application. Transaction management and its properties such as Atomicity, Consistency, Isolation, Durability (ACID) is the key focus of this unit. Students will also learn about the design, implementation and population of a data warehouse via an Extract, Transform and Load (ETL) process <ul><li>Pre-requisite: The pre-requisites of this unit are INF60009 Database Analysis and Design OR COS60009 Data Management for the Big Data Age </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Database-Systems-INF60014/local'> INF60014: Database Systems </a></li></ul> Please let me know if you want to contact a student advisor"],
+        "context": []
+    },
+
+    {"tag":"requirement_analysis_and_modelling",
+		"patterns": ["Requirements Analysis and Modelling","Requirement Analysis and Modelling","requirement analysis and modelling","RAM","INF60010","inf60010", "ram"],
+		"responses":["This unit aims to teach students to identify, critically analyse and instigate the process of exploring problem areas in a given context. They will apply analysis and modelling techniques in the context of practical problems, discuss alternative models and solutions, and argue effectively why some models or solutions are better than others given different evaluation criteria. <ul><li> Concurrent Pre-requisite: The concurrent prerequisties of this unit are INF60007: Business Information Systems AND Either INF60009: Database Analysis and Design OR COS60009: Data Management for the Big Data Age.</li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Requirements,-Analysis-and-Modelling-INF60010/local'> INF60010: Requirement Analysis and Modelling </a></li></ul> Please let me know if you want to contact a student advisor"],
+		"context":[]
+	},
+
+	{"tag": "Cloud_enterprise_systems_and_analytics",
+        "patterns": ["Cloud Enterprise Systems and Analytics", "Cloud Enterprise", "cloud enterprise systems and analytics", "INF60012", "inf60012", "cloud enterprise system analytics", "cloud enterprise analytics"],
+        "responses": ["This unit provides students with contemporary views of Cloud-based Enterprise Systems and their strategic contributions to the organisation. Cloud-based Enterprise Systems enable flexible organisational-wide integration of processes, workflows, and data. These systems are more adaptable to change and enable organisations to be more agile and streamline their activities to improved efficiencies. The inherent features of Cloud-based Enterprise Systems in the overall management of data and data analytics allows for a more informed, data-driven, decision-making activities within the. This unit also explores the key challenges surrounding the management of the Cloud-based Enterprise Systems and the best practices in maximising the delivery of organisational values, particularly through process integration and data analytics enabled by these systems. <ul><li> Pre-requisites: The prerequisites of this unit are INF60007 Business Information Systems Or INF60005 Information Organisations and Society Or Admission to MA-IT1 or MA-ITPC1 </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Cloud-Enterprise-Systems-and-Analytics-INF60012/local'> INF60012: Cloud Enterprise Systems and Analytics </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+        "context": []
+    },
+    {"tag":"big_data",
+        "patterns": ["Big Data","BIG DATA","big data","COS80023","cos80023"],
+        "responses":["This unit enables students to understand the nature of Big Data, and to evaluate and apply solutions to the problems of storing, integrating and analysing heterogeneous data sets with varying degrees of structure from diverse sources using the appropriate tools in order to extract meaningful information. <ul><li> Pre-requisites: The prerequisites of this unit are COS60006 Introduction to programming or TNE60003 Introduction to Network Programming and INF60009 Database Analysis and Design or COS60009 Data Management for the Big Data Age. </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Big-Data-COS80023/local'> COS80023: Big Data </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+        "context":[]
+    },
+    {"tag": "business_information_systems_analysis",
+        "patterns": ["Business Information Systems Analysis", "Business Analysis", "business information systems analysis" , "information systems analysis","INF80025","inf80025","BISA", "bisa", "busines info analysis", "business info system analysis", "business information system analysis"],
+        "responses": ["This unit encourages students to think deeply, critically and to communicate effectively about information systems problem solving. It provides students with tools to assist in the analysis of complex, socio-technical problems that typify the nature of organisational information systems and the work of business analysts. Students will be introduced to the importance of thinking through the technical, social and human dimensions of information systems problems and the value of teasing out the multiple perspectives and objectives that are likely to exist in complex human problem situations that can adversely impact information systems projects. <ul><li> Pre-requisites: The prerequisite of this unit is INF60010 Requirement Analysis and Modelling </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Business-Information-Systems-Analysis-INF80025/local'> INF80025: Business Information System Analysis </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+        "context": []
+    },
+
+    {"tag":  "data visualisation",
+        "patterns":["Applied Business Analytics and Data Visualisation","Business Analytics","Data Visualisation","INF80031","inf80031","BADV","badv", "business analytics data visualisation", "applied business analytics data visualisation", "applied business analytics and data visualisations"],
+        "responses": ["This unit covers issues relating to deriving business insights and foresights from various data sources for decision making purposes. Students gather skills to drive improved decision making process for senior management based on understanding data. Students will know the importance of understanding the short and long term goals of the organisation and how these impact the decision making process. Student will use tools that enable data analysis, Predictive Analytics, and data visualisation to assist in the delivery of delivering real-time actionable intelligence. <ul><li> Pre-requisites: This unit has the pre-requisite of INF60007 Business Information Systems or INF60012 Cloud Enterprise Systems and Analytics or INF70008 Business Analytics and Visualisation </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Applied-Business-Analytics-and-Data-Visualisation-INF80031/local'> INF80031: Applied Business Analytics and Data Visualisation </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+        "context": []
+    },
+    {"tag": "pred_analytics",
+        "patterns": ["Predictive Analytics","predictive analytics","INF80040","inf80040", "pred analytics"],
+        "responses": ["This unit aims to develop and enhance students’ conceptual and practical understanding of Predictive Analytics as an advanced topic in business analytics. Using an appropriate predictive model on select datasets, an organisation would be able to identify the likelihood of future outcomes based on historical and current data. The business foresight based on this analytics is instrumental in strategic decision making processes of the organisation. Students will have an opportunity to immerse themselves in problem-solving activities requiring lateral and critical thinking by exploring structured and unstructured data, considering and applying the appropriate Predictive Analytics techniques. <ul><li> Pre-requisites: The pre-requisites of this unit are INF60007 Business Information Systems or INF60012 Cloud Enterprise Systems and Analytics or INF70008 Business Analytics and Visualisation </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Predictive-Analytics-INF80040/local'> INF80040: Predictive Analytics </a></li></ul> Please let me know if you need to talk to a Student Advisor "],
+        "context": []
+    },
+
+    {
+    "tag": "research_methods",
+    "patterns": ["Applied Research Methods","applied research methods","ARM","Research Methdds", "research method", "applied research methods", "ICT90003", "ict 90003", "ict90003"],
+    "responses": ["To prepare students for ICT research in non-academic contexts such as legal, government, commercial and software production environments. <ul><li> Anti-requisites: ICT80011 Research Methods </li><li>Pre-requisites: The prerequisite of this unit is obtaining 75 credit points</li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Applied-Research-Methods-ICT90003/local'> ICT90003: Applied Research Methods </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+
+  {
+    "tag": "research_project",
+    "patterns": ["Applied Research Project","applied research project","research project","ARP","arp", "ICT90004", "ict 90004", "research project"],
+    "responses": ["In this unit, students will perform ICT research in non-academic contexts such as legal, government, commercial and software production environments.<ul><li>Pre-requisites: The prerequisite of this unit are Applied Research Methods(ICT90003) </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Applied-Research-Project-ICT90004/local'> ICT90004: Applied Research Project </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+
+  {
+    "tag": "Enterprise_Architecture",
+    "patterns": ["Enterprise Architecture,Strategy and governance","enterprise architecture, strategy and governance","INF80018","inf80018","inf 80018", "Enterprise Architecture Strategy and Governance", "enterprise architecture strategy governance", "enterprise architecture"],
+    "responses":["This unit builds the knowledge and skills required to adapt key business strategic planning tools, enterprise architecture frameworks and governance approaches to real world business scenarios. IT managers must provide systems and platforms that enable organisations to deliver their strategic objectives. IT managers 1) need to understand strategic planning tools and approaches, 2) be able to adapt existing architecture frameworks to design and deliver the new enterprise architecture, and 3) establish project governance approaches that will ensure the required programs of technology projects deliver the expected strategic benefits.<ul><li>Pre-requisites: The pre-requisites for this unit are INF80007 Business Information Systems for a Rapidly Changing World OR INF80042 Technology Essentials for Managers OR 37.5 credit points for students enrolled in MA-IT1 or MA-ITPC1  </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Enterprise-Architecture,-Strategy-&-Governance-INF80018/local'> INF80018: Enterprise Architecture Strategy & Governance </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+
+  {
+    "tag": "Business_Process_Management ",
+    "patterns": ["Business Process Management","business process management","BPM","bpm","INF80028","inf80028", "inf 80028", "busines proces mgmt", "busines proces managemen"],
+    "responses": ["This unit outlines the key concepts of business process management and modelling, its importance to an organisation, and how these support business activities. This also includes integration with a wide range of functions involving other organisations such as occurs in supply-chain management. The perspectives taken are that technology should align with strategic management objectives and cultural practices and also that business process analysis and design is a means of providing significant opportunities for innovation and performance advantage over competitors. <ul><li>Pre-requisites: The prerequisites of this unit are INF60010 Requirement Analysis and Modelling  </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Business-Process-Management-INF80028/local'> INF80028: Business Process Management </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "IS/IT_Risk_Management",
+    "patterns": ["IS/IT Risk Management","is/it risk management","IS Risk Management","IT Risk Management","INF80043","inf80043", "is risk management", "it risk management"],
+    "responses": ["This unit provides insights into critical Information System (IS)/Information Technology (IT) & Information Security risk, as well as the corresponding security management issues facing business managers in the effective use of Information Technology in contemporary organisations. In addition, the unit fosters a robust understanding of, and develops the skills required to adopt and implement, an effective Risk Management strategy in line with the Industry best practice in IS/IT Risk Management.<ul><li>Pre-requisites: The pre-requisites for this unit are 37.5 Credit Points And INF80042 Technology Essentials for Managers Or INF60007 Business Information Systems Or INF80007 Business Information Systems for a Rapidly Changing World Or Enrolment in MA-PM, MA-PMADV, MA-PMPROF or MA-ITPC1   </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/IS/IT-Risk-Management--INF80043/local'> INF80043: IS/IT Risk Management </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "object_oriented",
+    "patterns": ["Object-Oriented Programming","object-oriented programming","oops","oop","COS70006","cos70006", "cos 70006", "object programming", "object oriented programming"],
+    "responses": ["This unit of study aims to introduce students to structured programming and design. <ul><li>Pre-requisites: Prerequisites INF60008 Introduction to Programming in .NET OR COS60006 Introduction to Programming OR Admission to MA-ITPC Master of Information Technology (Professional Computing)   </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Object-Oriented-Programming-COS70006/local'> COS70006: Object-Oriented Programming </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag":"data_communication",
+    "patterns": ["Data Communication and Security","data communication and security","DCS","dcs","COS70007","cos70007"],
+    "responses": ["This unit of study aims to develop an understanding of the how data communication is achieved in networks, an overview of security issues related to data communication in networks and an understanding of how to write and analyse network applications. <ul><li>Concurrent prerequisite: The following units can be taken prior OR at the same time: COS70006 Object-Oriented Programming   </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Data-Communications-and-Security-COS70007/local'> COS70007: Data Communications and Security </a></li></ul> Please let me know if you need to talk to a Student Advisor "],
+    "context": []
+  },
+  {
+    "tag": "cloud_computing",
+    "patterns": ["Cloud Computing Architecture","cloud computing architecture","cca","COS80001","cos80001", "cos 80001", "cloud computing"],
+    "responses": ["This unit covers generic principles of everything as a service in cloud computing, plus practical work doing design and development for one or more contemporary platforms, which may vary from year to year. Cloud computing undergoes constant evolution, and there are several competing platforms, such as Amazon.  <ul><li>Prerequisite: The pre-requisites for this unit are Postgraduate MA-ITPC1 Master of Information Technology (Professional Computing) OR COS60004 Creating Web Applications </li><li>Assumed Knowledge: Familiarity with PHP, database concepts and SQL</li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Cloud-Computing-Architecture-COS80001/local'> COS80001: Cloud Computing and Architecture </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag":"cloud-native",
+    "patterns": ["Cloud-Native Application Architectures","cloud-native application architectures","cloud native","Cloud native","COS80011","cos80011", "cloud-native", "cloud applications"],
+    "responses": ["This unit gives a practical introduction to enterprise Web service development in the Cloud. Students will gain skills in creating and consuming different styles of Web service and composing them into applications. <ul><li>Prerequisite: The prerequisites for this unit is COS6004 Creating Web Application OR COS80021 Web Application Development AND COS70006 Object-Oriented Programming AND COS80001 Cloud Computing Architecture </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Cloud-Native-Application-Architectures--COS80011/local'> COS80011: Cloud Native Application Architecture </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "Mobile_Applications",
+    "patterns": ["Creating Data Driven Mobile Applications","creating data driven mobile applications","data driven mobile applications","mobile applications", "COS80020", "cos80020"],
+    "responses": ["This unit covers the skills and knowledge required for the design and development of software applications using the iOS platform. <ul><li>Prerequisite: The prerequisite for this unit is COS70006 Object-Oriented Programming or COS70002 Software Devlopment in Java </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Creating-Data-Driven-Mobile-Applications-COS80020/local'> COS80020: Creating Data Driven Mobile Applications </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "web_app_dev",
+    "patterns": ["Web Application Development","web application development","application development","COS80021","cos80021"],
+    "responses": ["This unit is designed to introduce a variety of technologies and techniques typically used in development of contemporary web-based systems, and to enable students to achieve a level of fluency in using these in a thoughtful and considered manner. Two web programming techniques will be introduced. The first is to use web-based embedded scripting language (PHP) on a web server (Apache) and a server-side database (MySQL), and the second is to use Ajax to manage asynchronous client-server communication and XML/JSON as data exchange languages.<ul><li>Prerequisite: The pre-requisites for this unit are COS60002 Web Development or COS60004 Creating Web Applications AND COS60006 Introduction to Programming  </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Web-Application-Development-COS80021/local'> COS80021: Web Application Development </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "internet_security",
+    "patterns": ["Internet Security","internet security","COS80013","cos80013", "cos 80013"],
+    "responses":["Students who complete this unit of study will understand the nature of security threats to IT systems. Students will also be aware of deficiencies in modern software systems and will understand how to manage the security of computer networks. Students will be familiar with the tools used by hackers and crackers and be aware of ways of identifying and rectifying security breaches and they will be able to collect digital evidence and understand the rules of evidence gathering.<ul><li>Prerequisite: The pre-requisites for this unit are COS60004 Creating Web Applications OR COS60007 Creating Web Applications and Databases AND One of COS70007 Data Communications and Security OR TNE60006 Networks and Switching OR COS80021 Web Application Development OR TNE60002 Network Administration  </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Internet--Security-COS80013/local'> COS80013: Internet Security </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context":[]
+    },
+  {
+    "tag": "network_switching",
+    "patterns": ["Networks and Switching","networks and switching","TNE60006","tne60006"],
+    "responses": ["This unit of study aims to introduce you to the field of data networking and to provide you with the necessary skills to design and successfully deploy a small network. <ul><li>Antirequisites: The anti-requisites for this unit is TNE60001 Networks and Routing  </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Networks-and-Switching-TNE60006/local'> TNE60006: Network and Switching </a></li></ul> Please let me know if you need to talk to a Student Advisor "],
+    "context": []
+  },
+  {
+    "tag": "network routing principles",
+    "patterns": ["Network Routing Principles","network routing principles","TNE70003","tne70003"],
+    "responses":["This Unit of study aims to provide you with a solid foundation in the technologies and functionality of routing within data networks. The Unit will also provide with an introduction to Wide Area Networks (WANs) and the skills to deploy common network services within a WAN infrastructure. <ul><li>Prerequisite: The pre-requisites for this unit is TNE60001 Networks and Routing  </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Network-Routing-Principles-TNE70003/local'> TNE70003: Network Routing Principles </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context":[]
+  },
+  {
+    "tag": "broadband_multimedia",
+    "patterns": ["Broadband Multimedia Networks","broadband multimedia networks","multimedia networks","TNE80003","tne80003"],
+    "responses": ["This unit of study aims to give you an in-depth understanding of the architecture and design issues relating to modern high-speed broadband networks. <ul><li>Prerequisite: There are no pre-requisites for this unit  </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Broadband-Multimedia-Networks-TNE80003/local'> TNE80003: Broadband Multimedia Networks </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+
+  },
+  {
+    "tag": "mobile_networking",
+    "patterns":["Mobile and Personal Networking","mobile and personal networking","TNE80005","tne80005", "mobile personal networking"],
+    "responses":["This unit of study aims to enable you to appreciate the key ideas, design principles and models used in modern mobile telecommunication systems and wireless networks. <ul><li>Prerequisite: There are no pre-requisites for this unit </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Mobile-and-Personal-Networking-TNE80005/local'> TNE80005: Mobile and Personal Networking </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "secure_networks",
+    "patterns": ["Secure networks","secure networks","TNE80006","tne80006"],
+    "responses":["The aim of this Unit is to examine security aspect relating to data networking infrastructure. <ul><li>Prerequisite: There are no pre-requisites for this unit </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Secure-Networks-TNE80006/local'> TNE80006: Secure Networks </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "advanced_java",
+    "patterns":["Advanced Java","advanced java","COS80007","cos80007", "advance java"],
+    "responses":["This unit aims to introduce students to contemporary Java frameworks in developing interactive client programs. <ul><li>Prerequisite: The prerequistes of this unit are COS80018 Database Programming or SWE20004 Technical Software Development  </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Advanced-Java-COS80007/local'> COS80007: Advanced Java </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "human_comp",
+    "patterns": ["Human-Computer Interaction","human-computer interaction","hci","COS80002","cos80002", "cos 80002", "human computer interaction", "human computer interact"],
+    "responses":["The aim of this unit is to consolidate the skills gained in User-Centred Design and to extend the student’s knowledge and understanding of Human-Computer Interaction in the context of a research project. <ul><li>Prerequisite: The pre-requisites of this unit are COS70004 User-Centred Design or COS20001 User-Centred Design </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Human-Computer-Interaction-COS80002/local'> COS80002: Human Computer Interaction </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context":[]
+  },
+  {
+    "tag": "enterprise_dev",
+    "patterns": ["Enterprise Development","enterprise development","SWE80005","swe80005", "enterprise dev"],
+    "responses": ["This unit of study aims to introduce students to techniques and technologies used in constructing enterprise software solutions. <ul><li>Prerequisite: The prerequisistes of this unit are COS80018 Database Programming OR COS70002 Software Development in Java OR COS70006 Object-Oriented Programming.  </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Enterprise-Development-SWE80005/local'> SWE80005: Enterprise Development </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "software_testing_processes",
+    "patterns": ["Software Testing Processes and Automation","software testing processes and automation","Software Testing and Processes", "COS80010", "cos80010", "cos 80010"],
+    "responses": ["The aim of this unit is that students will understand the issues involved in, and be capable of planning and conducting manual and automated testing of software.<ul><li>Prerequisite: The prerequisites of this unit are COS70002 Software Development in Java or COS70006 Object-Oriented Programming. </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Software-Testing-Processes-and-Automation-COS80010/local'> COS80010: Software Testing Processes and Automation </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "software_testing_reliability",
+    "patterns": ["Software Testing and Reliability","software testing and reliability","SWE80003","swe80003", "swe 80003"],
+    "responses": ["This unit aims to provide students with the concepts and methodologies of software testing and software reliability. <ul><li>Prerequisite: There are no pre-requisites for this unit </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Software-Testing-and-Reliability-SWE80003/local'> SWE80003: Software Testing Processes and Reliability </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "research_paper",
+    "patterns": ["Research Paper","research paper","ICT80007","ict80007"],
+    "responses": ["To provide a flexible program of study which allows the student to undertake a special project. This would require research into a topic that is relevant to the course but alternative to the prescribed subjects in Stage 2. <ul><li>Prerequisites: Students must have the approval of their course coordinator and have a topic and a supervisor.</li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Research-Paper-ICT80007/local'> ICT80007 Research Paper </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "network_admin",
+    "patterns": ["Network Administration","network administration","TNE60002","tne60002"],
+    "responses":["To build the understanding and skills required to design, configure and manage a single domain network.<ul><li>There are no prerequisites in this unit.</li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Network-Administration-TNE60002/local'> TNE60002 Network Administration </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "enterprise_network",
+    "patterns": ["Enterprise Network Server Administration","enterprise network server administration","TNE80007","tne80007"],
+    "responses": ["In this unit, students establish the skills and understanding required to design and configure a Windows Server based enterprise network. Student will build the skills required to design, configure and manage a single domain network.<ul><li>Prerequisite of this unit is TNE60002 Network Administration</li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Enterprise-Network-Server-Administration--TNE80007/local'>TNE80007 Enterprise Network Server Administration </a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+    },
+  {
+    "tag": "advanced_routing",
+    "patterns": ["Advanced Routing","advanced routing","TNE80008","tne80008"],
+    "responses": ["The aims of this unit of study are to build on to the skills acquired in the fundamental routing of networks subjects. Students will gain a greater detailed knowledge of the workings of the main IGP protocols as well as learn about the main EGP protocol BGP. Student will also acquire a basic understanding of IPv6 and its workings and gain a good understanding of remote solutions for geographically separated companies.<ul><li>The prerequisites of this unit are TNE70001 Internetworking Technology or TNE70003 Network Routing Principles </li> <li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Advanced-Routing-TNE80008/local'>TNE80008 Advanced Routing</a></li></ul> Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+    },
+  {
+    "tag": "advanced_switching",
+    "patterns": ["Advanced Switching","advanced switching","TNE80010","tne80010"],
+    "responses": ["This unit is designed to teach students how to implement, monitor, and maintain switching in converged enterprise campus networks. Students will learn how to plan, configure, and verify the implementation of complex enterprise switching solutions. Comprehensive labs emphasize hands-on learning and practice to reinforce configuration skills.<ul><li>The prerequisites of this unit are TNE70001 Internetworking Tchnology or TNE70003 Network Routing Principles</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Advanced-Switching-TNE80010/local'>TNE80010 Advanced Switching</a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+    },
+  {
+    "tag": "secure_remote_access",
+    "patterns": ["Secure Remote Access Networks","secure remote access networks","TNE80011","tne80011"],
+    "responses": ["This unit is designed to teach students to develop an in-depth understanding of network security principles as well as the tools and configurations available. The unit provides a theoretically rich, hands-on introduction to network security, in a logical sequence driven by technologies.<ul><li>The prerequisites of this unit are TNE70003 Network Routing Principles.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Secure-Remote-Access-Networks-TNE80011/local'>TNE80011 Secure Remote Access Networks</a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context":[]
+    },
+  {
+    "tag": "software_managed_networks",
+    "patterns": ["Software Managed Networks","software managed networks","TNE80013","tne80013"],
+    "responses": ["This Unit of study aims to open the world of dynamic Network Design, Management and Deployment. You will obtain an in-depth understanding of Modern approaches to advanced techniques to deploy and build IP Networks.<ul><li>The prerequisites of this unit are Postgraduate :TNE70003 Network Routing Principles AND TNE60003 Introduction to Network Programming.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Software-Managed-Networks-TNE80013/local'>TNE80013 Software Managed Networks</a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+    },
+  {
+    "tag": "unix_in_the_internet",
+    "patterns": ["Unix in the internet","unix in the internet","TNE80014","tne80014"],
+    "responses": ["This unit of study aims to provide you with an understanding of how the Unix operating system is deployed in data networking scenarios, and the ability to successfully deploy and manage such systems.<ul><li>The prerequisites of this unit are TNE60003 Introduction to Network Programming ORCOS70002 Software Development in Java OR COS70006 Object-Oriented Programming OR  Admission into MA-ENGSC Master of Engineering Science nested suite OR Admission into MA-ITPC1 Master of Information Technology Professional Computing OR   Admission into Master of Information Technology    AND   Concurrent pre-req: A unit can be either completed prior to commencing study or taken at the same time TNE70001 Internetworking Technology or TNE70003 Network Routing Principles</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Unix-in-the-Internet-TNE80014/local'>TNE80014 Unix in the Internet</a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "software_development",
+    "patterns": ["Software Development for Mobile Devices","software development for mobile devices","COS80019","cos80019"],
+    "responses": ["This unit of study aims to introduce students to software development and design for mobile devices.<ul><li>The prerequisites of this unit are COS70006 Object-Oriented Programming or COS80006 Enterprise Java or COS70002 Software Development in Java</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Software-Development-for-Mobile-Devices-COS80019/local'>COS80019 Software Development for Mobile Devices</a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "Data_driven_mobile_App",
+    "patterns": ["Creating Data Driven Mobile Applications","creating data driven mobile applications","COS80020","cos80020"],
+    "responses": ["This unit covers the skills and knowledge required for the design and development of software applications using the iOS platform.<ul><li>The prerequisite of this unit are COS70006 Object-Oriented Programming  or COS70002 Software Development in Java.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Creating-Data-Driven-Mobile-Applications-COS80020/local'>COS80020 Creating Data Driven Mobile Applications</a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "high-performance_software_systems",
+    "patterns": ["High-Performance Software Systems","high-performance software systems","COS80022","cos80022"],
+    "responses": ["The aim of this unit is to expose students to techniques for realising high performance of contemporary software systems using a range of activities in the lifecycle of performance engineering, including requirements, planning, and testing.<li>The prerequisite of this unit are COS70006 Object Oriented Programming.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/High-Performance-Software-Systems-COS80022/local'>COS80022 High Performance Software Systems</a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "mobile_business",
+    "patterns": ["Mobile Business and Social Media","mobile business and social media","mobile business","INF60013","inf60013"],
+    "responses": ["This unit offers a multidisciplinary inquiry into the foundations of social networking, social computing, mobile applications, Big Data, Cloud computing, Internet of Things and emerging network technologies. These issues will be discussed in conjunction with the current business landscape. In particular, the unit aims to provide students with an appreciation of the value of social networking and how it affects collaborative working, social interaction and knowledge exchange in organisations. It provides an understanding of the creation and management of social networking sites.<li> There are no prerequisites for this unit</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Mobile-Business-and-Social-Media-INF60013/local'>INF60013 Mobile Business and Social Media</a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "internship_project",
+    "patterns": ["Internship Project","internship project","ICT80004","ict80004"],
+    "responses": ["To provide students with “Real World” experience in the Information Technology Industry. Students will work on real problems that the Sponsor Organisation is facing and the student/s will be integral in the solution of the problems.<ul><li>The prerequisites of this unit are 100cps and Convenor's approval</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Internship-Project-ICT80004/local'>ICT80004 Internship Project</a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "global_ict_practice",
+    "patterns": ["Global ICT Practice","global ict practice","INF80039","inf80039"],
+    "responses": ["This unit provides students with the skills required to independently investigate the global context of the Information and Communication Technology (ICT) industry, and to navigate the associated professional, cultural and operational issues. ICT is an important enabler for global business operations today, yet how do we manage standards and practices that must span the geographic, political and cultural boundaries? Students will identify, analyse, and consider the technology trends that support globalisation and how these technologies are adopted in a local setting. They will also critically evaluate the validity of global ICT standards, in particular tools and methodologies such as ITIL/ISO20000, Project Management Body of Knowledge (PMBOK), Prince 2, and Capability Maturity Model Integration (CMMI).<ul><li>The prerequisite of this unit are INF80007 Business Information Systems for a Rapidly Changing World  OR INF80042 Technology Essentials for Managers OR INF60005 Information, Organisations and Society.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Global-ICT-Practice-INF80039/local'>INF80039 Global ICT Practice </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "web_apps_databases",
+    "patterns": ["Creating Web Applications and Databases","creating web applications and databases","Web Applications and Databases","COS60007","cos60007"],
+    "responses": ["The students will gain knowledge, skills and experience in frond-end web application development with HTML and CSS, back-end web application development with PHP, and database design with MySQL. They will also learn how to apply accessibility and usability principles in web application development.<li>The Prerequisites  are Anti-Requisite Successfully completed a unit that is very similar in content or the content overlaps with another unit. COS60004 Creating Web Applications COS60002 Web Development</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Creating-Web-Applications-and-Databases-COS60007/local'>COS60007 Creating Web Applications and Databases </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+
+  },
+  {
+    "tag":"network_prog",
+    "patterns": ["Introduction to Network Programming","introduction to network programming","network programming","TNE60003","tne60003"],
+    "responses": ["To introduce students to programming fundamentals and TCP/IP socket programming. This is an entry level unit of study which provides a suitable basis for later networking units that require programming based skills.<ul<li>There are no prerequisites for this unit</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Introduction-to-Network-Programming-TNE60003/local'>TNE60003 Introduction to Network Programming </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "os_management",
+    "patterns": ["Operating System Management","operating system management","ICT60001","ict60001"],
+    "responses": ["This unit is designed to introduce the use, configuration, use, control and management of operating systems. Students will learn a range of user interfaces and operating system commands. Students will understand OS file systems, access control and privilege management, user credential storage, updating processes and virtualisation. Students will use a high-level programming language to access different types of memory and block storage and input/output devices.<ul><li>There are no prerequisites for this unit</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Operating-System-Management-ICT60001/local'>ICT60001 Operating System Management </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "cyber_ethics",
+    "patterns": ["Cyber Ethics","cyber ethics","CYB70001","cyb70001"],
+    "responses": ["This unit is designed to introduce the student to the ICT profession and the ethical, legal and professional obligations which must be met by people working in the cybersecurity field. These include recognition of and compliance with ethical standards, laws, governance, software design processes and project management, service management, acquisition and delivery, security management and human factors.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Cyber-Ethics-CYB70001/local'>CYB70001 Cyber Ethics </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "internet_security",
+    "patterns": ["Internet Security","internet security","COS80013","cos80013"],
+    "responses": ["Students who complete this unit of study will understand the nature of security threats to IT systems. Students will also be aware of deficiencies in modern software systems and will understand how to manage the security of computer networks. Students will be familiar with the tools used by hackers and crackers and be aware of ways of identifying and rectifying security breaches and they will be able to collect digital evidence and understand the rules of evidence gathering. <ul><li>The prerequisites of this unit are COS60004 Creating Web Applications OR COS60007 Creating Web Applications and Databases  AND One of COS70007 Data Communications and Security OR TNE60006 Networks and Switching OR COS80021 Web Application Development OR TNE60002 Network Administration</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Internet--Security-COS80013/local'>COS80013 Internet Security </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag":"system_security",
+    "patterns": ["System Security Project","system security project","CYB80001"],
+    "responses": ["The key focus of system security unit is on enabling students to develop practical and working tactics to achieve digital security. In this unit, students will learn operational system security, the security of databases and servers and various aspects including design, implementation, and configuration in order to apply security measures and principles to protect these systems. Students will explore the framework of cyber security and safety principles and guidelines and the various tools used to enforce security and privacy. The unit will use a project-based learning paradigm to facilitate team-based investigations into cybersecurity events and threats. Students will perform guided exploitation attacks in practical sessions. <ul><li>Prerequisites :COS60007 Creating Web Applications and Databases Introduction to Network Programming (TNE60003) TNE60006 Networks and Switching    Concurrent pre-requisites   COS80013 Internet Security CYB70001 Cyber Ethics  ICT60001 Operating System Management.</li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/System-Security-Project-CYB80001/local'>CYB80001 System Security Project </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "os_cybersecurity",
+    "patterns": ["Operating System Cybersecurity","operating system cybersecurity","CYB80002","cyb80002"],
+    "responses": ["This unit is designed to introduce the protection, manipulation and analysis of the inner working of operating systems. Students will learn how the Windows and Linux kernels work and study classical computer science topics such as concurrency, scheduling, Windows and Linux memory management. A variety of operating system attacks which use buffer overflows, stack smashing, heap sprays, format strings, race conditions, return to LibC (Return-Oriented Programming), integer overflows, privilege escalation, code injection, sandbox bypass, resource exhaustion and hypervisor bypasses will be studied. Defence techniques will include cryptography, authentication, code signing, containerisation and anti-virus software.<ul><li> Prerequisites:CYB80001 System Security Project</li>. More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Operating-System-Cybersecurity-CYB80002/local'>CYB80002 Operating System Cybersecurity </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "advanced_cybersecurity",
+    "patterns": ["Advanced Cybersecurity Programming","advanced cybersecurity programming","CYB80003","cyb80003"],
+    "responses": ["This unit covers assembly language programming for Intel 80x86/64 CPU architectures and introductory assembly programming for ARM CPU architectures. Students will use their knowledge to write and inject shell code into vulnerable process, identify ROP gadgets and bypass ASLR and DEP OS protection and to write custom malware to exfiltrate data or provide unauthorised access. Student will make extensive use of debuggers and memory forensics tools to understand the operation of their code.<ul><li>Prerequisites: CYB80001 System Security Project.</li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Advanced-Cybersecurity-Programming-CYB80003/local'>CYB80003 Advanced Cybersecurity Programming </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "glass_box",
+    "patterns": ["Glass Box Project","glass box project","CYB80007","cyb80007"],
+    "responses": ["This unit has two foci: the collection, analysis and presentation of forensic evidence of attacks, data breaches and other cybersecurity incidents• investigation and diagnosis of faults in existing systems (on-line, stand-alone, mobile and cloud-based) and implementation of measures which will mitigate the identified security threats.Students will act in the role of 3rd parties, system administrators or software licensees who are unable to access or change core functionality, source code, binaries or software in memory. The students will find ways of ameliorating security vulnerabilities, verified by automated software testing.<ul><li>The prerequisiste of this unit are CYB80001 System Security ProjectConcurrent pre-requisites are CYB80002 Operating System Cybersecurity .</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Glass-Box-Project-CYB80007-/local'>CYB80007 Glass Box Project </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "reverse_engg_project",
+    "patterns": ["Reverse Engineering Project","reverse engineering project","CYB80008","cyb80008"],
+    "responses": ["The focus of this unit is on malware analysis and the reverse engineering and correction of software faults through the modification of compiled binaries and in-memory processes. The unit includes the reconstruction of source code from memory snapshots, the detection and analysis of encoded, obfuscated or encrypted malware (static or dynamic) and the automated injection of executable data into vulnerable processes. The by-passing of mitigation techniques such as Address Space Layout Randomisation (ASLR), Data Execution Prevention (DEP), stack canaries, deep packet inspection and anti-virus and Security Information and Event Management (SIEM) software will be in scope. Physical attacks such as Cold Boot Attacks will also be in scope.<ul><li>The Prerequisites are CYB80001 System Security Project Concurrent pre-requisites,CYB80003 Advanced Cybersecurity Programming.</li> More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Reverse-Engineering-Project-CYB80008-/local'>CYB80008 Reverse Engineering Project </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {"tag": "minor_thesis",
+    "patterns": ["Minor Thesis","minor thesis","ICT80014","ict80014"],
+    "responses": ["Aims and objectives of this unit are To provide an opportunity for students to develop analytical, research and report-writing skills while exploring a topic in depth.<ul><li>The prerequisites of this unit is this unit requires approval of Program Manager.</li>. More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Minor-Thesis-ICT80014/local'>ICT80014 Minor Thesis </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "adv_security",
+    "patterns": ["Advanced Security","advanced security","TNE80009","tne80009"],
+    "responses": ["This unit of study aims to introduce you to the issues of security in modern networks.<ul><li>Prerequisites of this unit are TNE60006 Networks and Switching and TNE80006 Secure Networks.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Advanced-Security-TNE80009/international'>TNE80009 Advanced Security </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "design_management_net",
+    "patterns": ["Design and Management of Networks","design and management of networks","TNE80001","tne80001"],
+    "responses": ["The aim of this Unit is to examine issues relating to the design and management of various telecommunication networks.<ul><li>Prerequisites of this unit are TNE70003 Network Routing Principles.</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Design-and-Management-of-Networks-TNE80001/international'>TNE80001 Design and Management of Networks </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "iot",
+    "patterns": ["Internet for Things(I4T)","Internet for Things","internet for things","IFT","TNE80015","tne80015"],
+    "responses": ["The unit will be offered from 2019 onwards.  The unit is not offered in 2018.This unit allows students to develop skills and expertise in the underlying network requirements and devices to support the Internet of Things (IoT).<ul><li>The prerequisites of this unit are TNE80005 Mobile and Personal Networking.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Internet-for-Things-(I4T)-TNE80015/international'>TNE80015 Internet for Things </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "stat_practice",
+    "patterns": ["Statistical Practice 2","statistical practice 2","STA60005","sta60005"],
+    "responses": ["This unit of study extends the ideas developed in previous units to include more advanced analyses, broaden the range of applications students are familiar with so that they will be able to carry out independent statistical investigations, and develop an awareness of the assumptions and limitations involved in the generalisation of results of such investigations.<ul><li>The prerequisites of this unit are Con Current Requistes Statistical Practice 1 (STA60001) or Research Project 1 (FBS90001) or COS60008 Introduction to Data Science STA60001 Statistical Practice 1.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Statistical-Practice-2-STA60005/international'>STA60005 Statistical Practice 2 </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "inc_and_part_design",
+    "patterns": ["Inclusive and Participatory Design","inclusive and participatory design","DDD60001","ddd60001"],
+    "responses": ["The unit introduces the principles of universal design and design standards in communications, products, environments and services. It will explain the various approaches and protocols of participatory design, co-design, user-centred design and inclusive design. It will examine how to include active engagement of all stakeholders and end users ensuring they are a critical part of the design process. It will introduce students to the principles, tools and techniques for inclusive and participatory design.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Inclusive-and-Participatory-Design-DDD60001/international'>DDD60001 Inclusive and Participatory Design </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "data_viz",
+    "patterns": ["Data Visualisation","data visualisation","COS80025","cos80025"],
+    "responses":["This unit aims to instruct students on the fundamental principles of information visualisation, and good design practices. Students will explore a wide range of visualisation idioms and develop the ability to create visualisations that empower users to understand real-world data sets.<ul><li>The prerequisites of this unit are cos60006 Introduction to Programming</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Data-Visualisation-COS80025/international'>COS80025 Data Visualisation </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "multivar_stats",
+    "patterns": ["Multivariate Statistics","multivariate statistics","STA70002","sta70002"],
+    "responses": ["This unit teaches students to identify and apply the multivariate statistical techniques most commonly used in social and health research, to understand the assumptions underlying their use, and appreciate the strengths and limitations of these methods. Knowledge of these methods is particularly helpful for gaining employment in statistical consulting.<ul><li>The prerequisites of this unit are STA60005 Statistical Practice 2.</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Multivariate-Statistics-STA70002/international'>STA70002 Multivariate Statistics </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag":"Advanced_data_min",
+    "patterns": ["Advanced Data Mining","advanced data mining","STA80005","sta80005"],
+    "responses": ["This unit introduces the principles and techniques used by data miners. Data mining is used to add value to large collections of data, delivering discoveries that continue to revolutionarise lives in our data-rich but knowledge-hungry world.<ul><li>The prerequisites of this unit are STA70002 Multivariate Statistics.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Advanced-Data-Mining-STA80005/international'>STA80005 Data Mining </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag":"data_science_project1",
+    "patterns": ["Data Science Project 1","data science project 1","COS80024","cos80024"],
+    "responses": ["This unit builds on students’ conceptual and practical understanding of the field of Data Science. Given a specific Data Science problem (that predominantly focuses on structured data), students are expected to put the basic concepts, key techniques and tools into practice in the context of a team-based project. Students will go through the entire Data Science lifecycle (data collection, management, wrangling and analysis) and will apply key visualisation techniques to communicate the main findings from the analysis to a variety of audiences. As such, students will gain understanding of how to identify and define data science relevant tasks in practical scenarios, and acquire the ability to contrast and apply given techniques and tools to resolve these tasks.<ul><li>The prerequisites of this unit are COS60008 Introduction to Data Science and COS60009 Data Management for the Big Data Age.Concurrent pre-requisites are COS80025 Data Visualisation.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Data-Science-Project-1-COS80024/international'>COS80024 Data Science Project 1 </a></li></ul>Please let me know if you need to talk to a Student Advisor "],
+    "context": []
+  },
+  {
+    "tag":"data_science_project2",
+    "patterns": ["Data Science Project 2","data science project 2","COS80026","cos80026"],
+    "responses": ["This unit builds on the first Data Science project unit and deepens students’ conceptual and practical understanding of the field of Data Science. Students are expected to work on multiple data sources (with both structured and unstructured data), perform a systematic comparison of popular data mining and analysis techniques given a problem description, choose (and possibly extend) suitable techniques to generate meaningful outcomes. The generated outcomes are to be interpreted and presented in an appropriate form, and future work is to be motivated and justified.The projects for this unit will be sourced in collaboration with the Data Science Institute and are expected to be of industry relevance.<ul><li>The prerequsites of this unit are COS80024 Data Science Project 1 and concurrent prerequistes are STA80005 Advanced Data Mining.</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Data-Science-Project-2-COS80026/international'>COS80026 Data Science Project 2 </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "machine_learning",
+    "patterns": ["Machine Learning","machine learning","COS80027","cos80027"],
+    "responses": ["This unit aims to develop and enhance students’ conceptual and practical understanding of machine learning (ML) in the contexts of industry-relevant applications where ML has emerged to play a key role. The students will learn about fundamental concepts, key techniques and popular tools in ML as well as how real-world problems are cast into ML tasks. They will also acquire the ability to apply ML techniques and tools to solve industry-relevant problems.<ul><li>The prerequisites of this unit are COS6000 6Intrdouction to Programming and STA70002 Multivariate Statistics Technology Enquiry Project.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Machine-Learning-COS80027/international'>COS80027 Macgine Learning </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "datascience_capstone_project",
+    "patterns": ["Data Science Capstone Project","data science capstone project","COS80028","cos80028"],
+    "responses": ["The capstone project unit will allow students to demonstrate the knowledge and skills gained in previous units in the context of a medium-sized R&D project. Students will not only be expected to identify the problem(s) specific to a given project, outline and justify the necessary activities to address the given problem, create a software-intensive solution, communicate the results to various project stakeholders, and identify further investigations that need to be conducted. The results of the conducted study should be of the nature that they can form the basis of a scientific publication.<ul><li>The prerequisites of this unit are COS80026 Data Science Project 2.</li>More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Data-Science-Capstone-Project-COS80028-/international'>COS80028 DataScience Capstone Project </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag": "forecasting",
+    "patterns": ["Forecasting","forecasting","STA70004","sta70004"],
+    "responses": ["This unit introduces students to a range of forecasting methods and their application to planning and decision-making. It teaches teach students about common tools and packages used in forecasting; the use of historical data to identify appropriate forecasting model(s); the use of accuracy measures to check the adequacy of the selected model; and the use the final model to forecast future values.<ul><li>The prerequisites of this unit are STA60005 Statistical Practice 2</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Forecasting-STA70004/international'>STA70004 Forecasting </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag":"advanced_stat_model",
+    "patterns": ["Advanced Statistical Modelling","advanced statistical modelling","STA80011","sta80011"],
+    "responses": ["To introduce more advanced modelling techniques, including ordinal and multinomial logistic regression, generalised linear models, GEEs, mixed models, multi-level models and survival analysis.<ul><li>The prerequisite of this unit are STA70002 Multivariate Statistics</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Advanced-Statistical-Modelling-STA80011/international'>STA80011 Advanced Statistical Modelling </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  },
+  {
+    "tag":"stat_decision_making",
+    "patterns": ["Statistical Decision Making","statistical decision making","STA80006","sta80006"],
+    "responses": ["Students will learn to model and manage uncertainty and risk. Some of the most commonly used probability distributions will be introduced together with Monte Carlo simulations. The concept of Maximum Likelihood Estimation (MLE) will also be introduced, allowing the estimation of distribution parameters. Probabilistic methods and models will then be illustrated using appropriate examples and software.<ul><li>The prerequisite of this unit are STA70002 Multivariate Statistics</li>.More information about this unit can be found at: <a href='https://www.swinburne.edu.au/study/courses/units/Statistical-Decision-Making-STA80006/international'>STA80006 Statistical Decision Making </a></li></ul>Please let me know if you need to talk to a Student Advisor"],
+    "context": []
+  }
+
+]
+}
+
