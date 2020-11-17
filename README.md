@@ -7,7 +7,7 @@ Made as a University Research Project. It is currently deployed on the default W
 
 ## Here is how to run it:
 
-Note: Please make sure you have Python 3.6 or 3.7 installed and a virtual environment set up. I used PyCharm as my preferred IDE.
+*Note: Please make sure you have Python 3.6 or 3.7 installed and a virtual environment set up. I used PyCharm as my preferred IDE.*
 
 Install the requirements file
 
