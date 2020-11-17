@@ -21,7 +21,7 @@ Run the application as a Python file
 python app.py
 ```
 
-Run the application as a Python file
+Run the application as a Flask file
 
 ```
 Flask app.py
