@@ -1,5 +1,5 @@
 # Swinbot
-*Thanks for visiting*
+*Thanks for visiting*\n
 Tensorflow based Chatbot using <strong>Flask, Python and JavaScript </strong>. 
 Made as a University Research Project.
 
