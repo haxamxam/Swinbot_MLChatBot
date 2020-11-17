@@ -3,7 +3,7 @@
 Tensorflow based Chatbot using <strong>Flask, Python and JavaScript </strong>. 
 Made as a University Research Project.
 
-##Here is how to run it:
+## Here is how to run it:
 
 Note: Please make sure you have Python 3.6 or 3.7 installed and a virtual environment set up. I used PyCharm as my preferred IDE.
 
