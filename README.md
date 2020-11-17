@@ -2,7 +2,8 @@
 *Thanks for visiting*
 
 Tensorflow based Chatbot using <strong>Flask, Python and JavaScript </strong>. 
-Made as a University Research Project.
+
+Made as a University Research Project. It is currently deployed on the default WSGI server.
 
 ## Here is how to run it:
 
