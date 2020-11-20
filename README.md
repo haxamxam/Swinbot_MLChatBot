@@ -24,5 +24,10 @@ python app.py
 Run the application as a Flask file
 
 ```
-Flask app.py
+flask app.py
 ```
+Upon successful execution of the code the chatbot will be deployed to a local host at  http://127.0.0.1:5000/
+
+Inspired the by the tutorial
+https://chatbotsmagazine.com/contextual-chat-bots-with-tensorflow-4391749d0077
+
