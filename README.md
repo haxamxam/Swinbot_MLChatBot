@@ -28,10 +28,10 @@ http://127.0.0.1:5000/
 
 ## Flask Application
 
-Run the application as a Flask application. If you use the Flask executable to start your server, you can use the script below to change the default from 127.0.0.1 and open it up to non local connections.
+Run the application as a Flask application. If you use the Flask executable to start your server, you can use the script below to change the default from 127.0.0.1 and open it up to non local connections. Simply run the flask app with your acquired IPv4 address
 
 ```
-flask run --h=0.0.0.0
+flask run -h 192.168.X.X
 ```
 
 Inspired the by the tutorial
