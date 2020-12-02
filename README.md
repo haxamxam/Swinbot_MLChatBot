@@ -21,10 +21,11 @@ Run the application as a Python file
 python app.py
 ```
 
-Run the application as a Flask file
+Run the application as a Flask application. If you use the Flask executable to start your server, you can use the script below to change the default from 127.0.0.1 and open it up to non local connections.
 
 ```
-flask app.py
+flask run --host=0.0.0.0
+
 ```
 Upon successful execution of the code the chatbot will be deployed to a local host at:
 
