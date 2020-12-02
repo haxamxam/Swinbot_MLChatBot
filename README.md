@@ -43,8 +43,14 @@ flask run -h 192.168.X.X
 The final chatbot looks like the following
 
 <p align="center">
+  <img src="https://github.com/haxamxam/Swinbot_MLChatBot/blob/master/static/images/ezgif.com-crop.gif" width="600" title="hover text">
+</p>
+
+<p align="center">
   <img src="https://github.com/haxamxam/Swinbot_MLChatBot/blob/master/static/images/chatbot_gui_image.png" width="350" title="hover text">
 </p>
+
+
 
 ## Inspiration and Resources
 
