@@ -17,7 +17,7 @@ Made as a University Research Project. It is currently deployed on the default W
 Install the requirements file
 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 ## Python Execution
 
