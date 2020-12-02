@@ -46,7 +46,7 @@ The final chatbot looks like the following
   <img src="https://github.com/haxamxam/Swinbot_MLChatBot/blob/master/static/images/chatbot_gui_image.png" width="350" title="hover text">
 </p>
 
-###### Inspiration and Resources
+## Inspiration and Resources
 
 Inspired the by the tutorial:
 
