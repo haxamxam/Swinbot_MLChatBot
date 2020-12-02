@@ -1,4 +1,4 @@
-# Swinbot
+# Swinbot Tensorflow Chatbot
 
 <p align="center">
   <img src="https://github.com/haxamxam/Swinbot_MLChatBot/blob/master/static/images/chatbot_main.png" width="350" title="hover text">
@@ -38,6 +38,12 @@ Run the application as a Flask application. If you use the Flask executable to s
 ```
 flask run -h 192.168.X.X
 ```
+## Chatbot Application
+
+<p align="center">
+  <img src="https://github.com/haxamxam/Swinbot_MLChatBot/blob/master/static/images/chatbot_gui_image.png" width="350" title="hover text">
+</p>
+
 
 Inspired the by the tutorial
 
