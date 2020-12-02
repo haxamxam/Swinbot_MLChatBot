@@ -40,12 +40,15 @@ flask run -h 192.168.X.X
 ```
 ## Chatbot Application
 
+The final chatbot looks like the following
+
 <p align="center">
   <img src="https://github.com/haxamxam/Swinbot_MLChatBot/blob/master/static/images/chatbot_gui_image.png" width="350" title="hover text">
 </p>
 
+###### Inspiration and Resources
 
-Inspired the by the tutorial
+Inspired the by the tutorial:
 
 https://chatbotsmagazine.com/contextual-chat-bots-with-tensorflow-4391749d0077
 
