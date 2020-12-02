@@ -1,4 +1,9 @@
 # Swinbot
+
+<p align="center">
+  <img src="https://github.com/haxamxam/Swinbot_MLChatBot/blob/master/static/images/chatbot_main.png" width="350" title="hover text">
+</p>
+
 *Thanks for visiting*
 
 Tensorflow based Chatbot using <strong>Flask, Python and JavaScript </strong>. 
