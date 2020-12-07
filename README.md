@@ -54,6 +54,12 @@ The final chatbot looks like the following
 </p>
 
 
+*Link to the chatbot:*
+
+https://serene-fjord-29620.herokuapp.com/
+
+
+
 ## Inspiration and Resources
 
 Inspired the by the tutorial:
